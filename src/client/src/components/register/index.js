@@ -1,8 +1,12 @@
 import React from 'react';
-import styles from './css/style.module.css';
+import styles from './styles/style.module.css';
+import {
+    Link
+} from "react-router-dom";
+import { LOGIN } from '../../constants/'
+import { Wrapper, FirstItem, SecondItem } from './styles'
 
 const Register = ({ props, children }) => {
-    console.log(styles);
     return (
         <div className={styles.login}>
             {children}
@@ -11,33 +15,62 @@ const Register = ({ props, children }) => {
 }
 
 Register.infoSection = ({ props, children }) => {
+    console.log(` Wrapper => ${Wrapper}`)
     return (
-        <div className={styles.login_fc_item_1 }>
-            <div className={styles.login_fc_it_1_ch_1}>
-                <i className="fab fa-facebook "></i>
-                <i className="fab fa-instagram "></i>
-                <i className="fab fa-twitter"></i>
-            </div>
-            <div className={styles.login_fc_it_1_ch_2}>
-                <h1>MATCHA</h1>
-                <p className={styles.custom_para}>Chat with new people<br /> around the world.</p>
-                <p>Meet millions of new people from all over the world, wherever you are. Have a good
-                chat, make new friends or even find the love of your
-                life. Because life is all about the people you meet.</p>
-                <a href="#"><i className="fab fa-facebook "></i><span>Sign Up With Facebook</span><span></span></a>
-            </div>
-            <div className={styles.login_fc_it_1_ch_3}>
-                <h1>1,000,000,000</h1>
-                <p>Conversation on Matcha</p>
-            </div>
-        </div >
+        // <div className={styles.login_fc_item_1}>
+        //     <div className={styles.login_fc_it_1_ch_1}>
+        //         <i className="fab fa-facebook "></i>
+        //         <i className="fab fa-instagram "></i>
+        //         <i className="fab fa-twitter"></i>
+        //     </div>
+        //     <div className={styles.login_fc_it_1_ch_2}>
+        //         <h1>MATCHA</h1>
+        //         <p className={styles.custom_para}>Chat with new people<br /> around the world.</p>
+        //         <p>Meet millions of new people from all over the world, wherever you are. Have a good
+        //         chat, make new friends or even find the love of your
+        //         life. Because life is all about the people you meet.</p>
+        //         <a href="#"><i className="fab fa-facebook "></i><span>Sign Up With Facebook</span><span></span></a>
+        //     </div>
+        //     <div className={styles.login_fc_it_1_ch_3}>
+        //         <h1>1,000,000,000</h1>
+        //         <p>Conversation on Matcha</p>
+        //     </div>
+        // </div >
+        <>
+            <Wrapper>
+                <FirstItem>
+                    <FirstItem.Icon className="fab fa-facebook">
+                    </FirstItem.Icon>
+                    <FirstItem.Icon className="fab fa-instagram">
+                    </FirstItem.Icon>
+                    <FirstItem.Icon className="fab fa-twitter">
+                    </FirstItem.Icon>
+                </FirstItem>
+                <SecondItem>
+                    <SecondItem.Title>
+                        MATCHA
+                    </SecondItem.Title>
+                    <SecondItem.FirstPara>
+                        Chat with new people<br /> around the world.
+                    </SecondItem.FirstPara>
+                    <SecondItem.SecondPara>
+                        Meet millions of new people from all over the world, wherever you are. Have a good
+                        chat, make new friends or even find the love of your
+                        life. Because life is all about the people you meet.
+                    </SecondItem.SecondPara>
+                    {/* <SecondItem.Button as="Link" to={"#"} >
+                        <i className="fab fa-facebook "></i>
+                    </SecondItem.Button> */}
+                </SecondItem>
+            </Wrapper>
+        </>
     );
 }
 
 Register.formSection = ({ props, children }) => {
     return (
         <div className={styles.login_fc_item_2}>
-            <a href="" className={styles.login_btn}>Log in</a>
+            <Link to={LOGIN} className={styles.login_btn}>Log in</Link>
             <div className={styles.login_form_ct}>
                 <h4><span>OR SIGN UP WITH EMAIL</span></h4>
                 <form action="" className={styles.login_form_flex}>

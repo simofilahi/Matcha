@@ -1,0 +1,210 @@
+
+  /* Login */
+  .login {
+    height: 100vh;
+    display: flex;
+  }
+
+  .login_fc_item_1 {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(-75deg, #f7b733 0%, #fc4a1a 100%);
+    color: white;
+  }
+
+  .login_fc_it_1_ch_1 {
+    padding: 20px;
+    align-self: flex-start;
+  }
+
+  .login_fc_it_1_ch_1 i {
+    padding: 10px;
+    margin: 5px;
+    color: #fb551d;
+    background-color: #ffffff;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .login_fc_it_1_ch_2 {
+    align-self: flex-end;
+    max-width: 500px;
+    margin-bottom: 300px;
+    margin-right: 50px;
+  }
+
+  .login_fc_it_1_ch_2 h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .login_fc_it_1_ch_2 .custom_para {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  .login_fc_it_1_ch_2 p {
+    margin-bottom: 3rem;
+  }
+
+  .login_fc_it_1_ch_2 i {
+    background-color: #263b80;
+    padding: 8px;
+    border-radius: 100%;
+  }
+
+  .login_fc_it_1_ch_2 a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    max-width: 350px;
+    text-decoration: none;
+    color: white;
+    background-color: #4562c7;
+    border-radius: 50px;
+  }
+
+  .login_fc_it_1_ch_3 {
+    align-self: flex-start;
+    padding: 20px;
+  }
+
+  /* Form */
+
+  .login_form_ct h4 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+
+  .login_form_ct span {
+    background: #fff;
+    padding: 0 10px;
+    color: #6d7c85;
+  }
+
+  .login_fc_item_2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .login_btn {
+    align-self: flex-end;
+    margin: 20px;
+    padding: 11px 28px;
+    background-color: #fb7627;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .login_form_ct {
+    max-width: 400px;
+    margin-bottom: 300px;
+    margin-left: 50px;
+  }
+
+  .login_form_flex {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login_form_row {
+    display: flex;
+    margin: 2px 0px;
+    width: 100%;
+  }
+
+  .login_form_col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login_form_col label {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .login_form_col input {
+    padding: 13px 0px;
+    padding-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: solid 0.5px #cccccc;
+    outline-color: #3498db;
+  }
+
+  .login_form_col select {
+    color: #283744;
+    background-color: #f8f8f8;
+    padding: 12px 0px;
+    padding-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: solid 0.5px #cccccc;
+  }
+
+  .login_form_row_birth {
+    display: flex;
+    margin: 2px 0px;
+    width: 100%;
+  }
+
+  .login_form_col_birth {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .login_form_col_birth select {
+    color: #283744;
+    background-color: #f8f8f8;
+    padding: 12px 0px;
+    padding-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    border: solid 0.5px #cccccc;
+  }
+
+  .login_form_col_birth label {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  .login_form_row_birth select {
+    flex: 1;
+  }
+
+  .login_form_col_btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .login_form_col_btn input[type="submit"] {
+    text-align: center;
+    color: #ffffff;
+    background-color: #fb7627;
+    border: none;
+    padding: 11px 28px;
+    border-radius: 50px;
+    width: 100%;
+  }
+

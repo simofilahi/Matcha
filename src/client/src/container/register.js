@@ -1,19 +1,19 @@
 import React from 'react';
-import Register from '../components';
+import { Register } from '../components';
 
 const RegisterContainer = () => {
-    return (
-      <>
-        <Register>
-          <Register.infoSection>
+  return (
+    <>
+      <Register>
+        <Register.infoSection>
 
-          </Register.infoSection>
-          <Register.formSection>
+        </Register.infoSection>
+        <Register.formSection>
 
-          </Register.formSection>
-        </Register>
-      </>
-    );
+        </Register.formSection>
+      </Register>
+    </>
+  );
 }
 
 export default RegisterContainer;
