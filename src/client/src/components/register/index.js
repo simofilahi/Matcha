@@ -1,9 +1,10 @@
 import React from 'react';
-import './css/style.css'
+import styles from './css/style.module.css';
 
 const Register = ({ props, children }) => {
+    console.log(styles);
     return (
-        <div className="login-fc">
+        <div className={styles.login}>
             {children}
         </div>
     );
@@ -11,21 +12,21 @@ const Register = ({ props, children }) => {
 
 Register.infoSection = ({ props, children }) => {
     return (
-        <div className="login-fc-item-1 ">
-            <div className="login-fc-it-1-ch-1">
-                <i class="fab fa-facebook "></i>
-                <i class="fab fa-instagram "></i>
-                <i class="fab fa-twitter"></i>
+        <div className={styles.login_fc_item_1 }>
+            <div className={styles.login_fc_it_1_ch_1}>
+                <i className="fab fa-facebook "></i>
+                <i className="fab fa-instagram "></i>
+                <i className="fab fa-twitter"></i>
             </div>
-            <div className="login-fc-it-1-ch-2">
+            <div className={styles.login_fc_it_1_ch_2}>
                 <h1>MATCHA</h1>
-                <p className="custom-para">Chat with new people<br /> around the world.</p>
+                <p className={styles.custom_para}>Chat with new people<br /> around the world.</p>
                 <p>Meet millions of new people from all over the world, wherever you are. Have a good
                 chat, make new friends or even find the love of your
                 life. Because life is all about the people you meet.</p>
-                <a href="#"><i class="fab fa-facebook "></i><span>Sign Up With Facebook</span><span></span></a>
+                <a href="#"><i className="fab fa-facebook "></i><span>Sign Up With Facebook</span><span></span></a>
             </div>
-            <div className="login-fc-it-1-ch-3">
+            <div className={styles.login_fc_it_1_ch_3}>
                 <h1>1,000,000,000</h1>
                 <p>Conversation on Matcha</p>
             </div>
@@ -35,18 +36,18 @@ Register.infoSection = ({ props, children }) => {
 
 Register.formSection = ({ props, children }) => {
     return (
-        <div className="login-fc-item-2">
-            <a href="" className="login-btn">Log in</a>
-            <div className="login-form-ct">
+        <div className={styles.login_fc_item_2}>
+            <a href="" className={styles.login_btn}>Log in</a>
+            <div className={styles.login_form_ct}>
                 <h4><span>OR SIGN UP WITH EMAIL</span></h4>
-                <form action="" className="login-form-flex">
-                    <div className="login-form-row">
-                        <div className="login-form-col">
-                            <label for="fname">First name</label>
+                <form action="" className={styles.login_form_flex}>
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="fname">First name</label>
                             <input type="text" id="fname" name="firstname" placeholder="e.g Kim" />
                         </div>
-                        <div className="login-form-col">
-                            <label for="gender">Gender</label>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="gender">Gender</label>
                             <select>
                                 <option>You are...</option>
                                 <option>a man</option>
@@ -54,10 +55,10 @@ Register.formSection = ({ props, children }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="login-form-row">
-                        <div className="login-form-col-birth">
-                            <label for="birth">Birthday</label>
-                            <div className="login-form-row-birth">
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col_birth}>
+                            <label htmlFor="birth">Birthday</label>
+                            <div className={styles.login_form_row_birth}>
                                 <select>
                                     <option>Day</option>
                                     <option>a man</option>
@@ -76,13 +77,13 @@ Register.formSection = ({ props, children }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="login-form-row">
-                        <div className="login-form-col">
-                            <label for="City">City</label>
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="City">City</label>
                             <input type="text" id="city" name="city" placeholder="e.g London" />
                         </div>
-                        <div className="login-form-col">
-                            <label for="type">You're here to...</label>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="type">You're here to...</label>
                             <select>
                                 <option>Select</option>
                                 <option>Chat</option>
@@ -91,20 +92,20 @@ Register.formSection = ({ props, children }) => {
                             </select>
                         </div>
                     </div>
-                    <div className="login-form-row">
-                        <div className="login-form-col">
-                            <label for="email">Email address</label>
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="email">Email address</label>
                             <input type="email" id="email" name="email" placeholder="e.g example@example.com" />
                         </div>
                     </div>
-                    <div className="login-form-row">
-                        <div className="login-form-col">
-                            <label for="password">Password</label>
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col}>
+                            <label htmlFor="password">Password</label>
                             <input type="password" id="password" name="password" placeholder="At least 8 characters" />
                         </div>
                     </div>
-                    <div className="login-form-row">
-                        <div className="login-form-col-btn">
+                    <div className={styles.login_form_row}>
+                        <div className={styles.login_form_col_btn}>
                             <input type="submit" value="SIGN UP" />
                         </div>
                     </div>

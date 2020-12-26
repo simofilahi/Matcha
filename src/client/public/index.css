@@ -1,0 +1,12 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main style */
+html,
+body {
+  font-family: "Segoe UI", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
