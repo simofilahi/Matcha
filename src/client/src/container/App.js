@@ -6,18 +6,22 @@ import {
 } from "react-router-dom";
 import RegisterContainer from './register';
 import LoginContainer from './login';
+import Homecontainer from './home';
 import {
   HOME,
   LOGIN,
   REGISTER
 } from '../constants';
 
+
 function App() {
   return (
     <Router>
       <Switch>
-        {/* <Route path={HOME} component={() => <h1>Home</h1>} exact={true}/> */}
-        <Route path={REGISTER} exact={true} >
+        <Route path={HOME} exact={true}>
+          <Homecontainer />
+        </Route>
+        <Route path={REGISTER}  >
           <RegisterContainer />
         </Route>
         <Route path={LOGIN}>
