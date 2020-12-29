@@ -1,11 +1,19 @@
 import React from 'react';
 import {
     HeaderContainer,
-    Wrapper,
     NavBar,
 } from './styles'
-
+import {Link} from 'react-router-dom';
+import {
+    LIKES,
+    CHAT,
+    EXPLORE,
+    VIEW,
+    SEARCH,
+}from '../../constants/'
+import LikesPage from '../like';
 const Header = ({props, children}) => {
+    console.log(LIKES);
     return (
         <HeaderContainer>
                 <NavBar>
@@ -14,21 +22,33 @@ const Header = ({props, children}) => {
                             Matcha
                         </NavBar.Title>
                         <NavBar.Menu>
-                            <NavBar.Icon className="fab fa-facebook fa-2x">
+                      
+                <Link to={EXPLORE} >
+                <NavBar.Icon className="far fa-thumbs-up">          
+                </NavBar.Icon>             
+                </Link>
+                <Link to={SEARCH} >
+                            <NavBar.Icon className="fas fa-th">
+                         
 
                             </NavBar.Icon>
-                            <NavBar.Icon className="fab fa-facebook fa-2x">
+                            </Link>    
+                            <Link to={CHAT} >
+                            <NavBar.Icon className="far fa-comment">
 
                             </NavBar.Icon>
-                            <NavBar.Icon className="fab fa-facebook fa-2x">
+                            </Link>    
+                            <Link to={LIKES} >
+                            <NavBar.Icon className="far fa-heart">
 
                             </NavBar.Icon>
-                            <NavBar.Icon className="fab fa-facebook fa-2x">
+                            </Link>
+                            <Link to={VIEW} >
+                            <NavBar.Icon className="far fa-eye">
+                            
 
                             </NavBar.Icon>
-                            <NavBar.Icon className="fab fa-facebook fa-2x">
-
-                            </NavBar.Icon>
+                            </Link>
                         </NavBar.Menu>
                     </NavBar.LeftItem>
                     <NavBar.RightItem>
@@ -36,7 +56,7 @@ const Header = ({props, children}) => {
                            
                         </NavBar.Avatar>
                         <NavBar.Menu>
-                                <NavBar.Icon className="fab fa-facebook fa-2x">
+                                <NavBar.Icon className="far fa-bell">
 
                                 </NavBar.Icon>
                         </NavBar.Menu>  

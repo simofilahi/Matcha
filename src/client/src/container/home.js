@@ -1,12 +1,13 @@
 import React from "react";
 import {
-    Home
+    Home,
 } from '../components';
 
 const Homecontainer = (props) => {
+    console.log(`props ==> ${props}`);
     return (
         <Home>
-            <Home.Header />
+           
         </Home>
     );
 }
