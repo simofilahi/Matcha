@@ -1,3 +1,9 @@
-export const HOME = '/'; 
+export const ROOT = 'ROOT';
+export const HOME = '/home'; 
 export const LOGIN = '/login';
 export const REGISTER = '/register';
+export const LIKES = '/likes';
+export const EXPLORE = '/explore';
+export const CHAT = '/chat';
+export const SEARCH = '/search';
+export const VIEW = '/view';
