@@ -24,10 +24,11 @@ import {
   EXPLORE,
   VIEW,
 } from '../constants';
+
 import {
   Home,
-
 } from '../components';
+
 
 
 function App() {
