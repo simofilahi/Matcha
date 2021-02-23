@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Container = styled.div`
+
     flex: 1.5;
     display: flex;
     flex-direction: column;
@@ -8,6 +9,11 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     background-image: linear-gradient(-75deg, #f7b733 0%, #fc4a1a 100%);
     color: white;
+`;
+
+
+export const Wrapper = styled.div`
+
 `;
 
 export const FirstItem = styled.div`
@@ -48,9 +54,40 @@ SecondItem.SecondPara = styled.p`
     margin-bottom: 3rem;
 `
 
+SecondItem.Button = styled.a`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    max-width: 350px;
+    text-decoration: none;
+    color: white;
+    background-color: #4562c7;
+    border-radius: 50px;
+    cursor: pointer;
+`;
+
+SecondItem.ButtonIcon = styled.i`
+    background-color: #263b80;
+    padding: 8px;
+    border-radius: 100%;
+`;
+
+SecondItem.ButtonTitle = styled.span`
+    align-self: center;
+`;
+
 export const ThirdItem = styled.div`
+  align-self: flex-start;
+  padding: 20px;
+`;
+
+ThirdItem.Title = styled.h1`
 
 `;
 
+ThirdItem.Para = styled.p`
+
+`;
 
 

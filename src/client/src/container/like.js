@@ -1,14 +1,8 @@
 import React from "react";
-import {
-    LikePage,
-} from '../components';
+import { LikePage } from "src/components";
 
 const LikeContainer = (props) => {
-    return (
-        <LikePage>
-           
-        </LikePage>
-    );
-}
+  return <LikePage></LikePage>;
+};
 
 export default LikeContainer;
