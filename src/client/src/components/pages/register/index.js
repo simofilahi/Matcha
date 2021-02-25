@@ -2,10 +2,30 @@ import React from "react";
 import styles from "./styles/style.module.css";
 import { Link } from "react-router-dom";
 import { LOGIN } from "src/constants/";
-import { Container, Wrapper, FirstItem, SecondItem, ThirdItem } from "./styles";
+import {
+  Container,
+  Wrapper,
+  FirstItem,
+  SecondItem,
+  ThirdItem,
+  SectionFormContainer,
+  LoginFormContainer,
+  FormContainer,
+  FormCol,
+  FormRow,
+  FormBirthRow,
+  FormBirthCol,
+  FormColBtn,
+  HeaderFour,
+  Text,
+  Label,
+  Input,
+  Select,
+  LoginBtn,
+} from "./styles";
 
 const Register = ({ props, children }) => {
-  return <div className={styles.login}>{children}</div>;
+  return <Wrapper>{children}</Wrapper>;
 };
 
 Register.infoSection = ({ props, children }) => {
@@ -47,107 +67,108 @@ Register.infoSection = ({ props, children }) => {
 
 Register.formSection = ({ props, children }) => {
   return (
-    <div className={styles.login_fc_item_2}>
-      <Link to={LOGIN} className={styles.login_btn}>
-        Log in
-      </Link>
-      <div className={styles.login_form_ct}>
-        <h4>
-          <span>OR SIGN UP WITH EMAIL</span>
-        </h4>
-        <form action="" className={styles.login_form_flex}>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col}>
-              <label htmlFor="fname">First name</label>
-              <input
+    <SectionFormContainer>
+      <LoginBtn>
+        <Link to={LOGIN}>Log in</Link>
+      </LoginBtn>
+      <LoginFormContainer>
+        <HeaderFour>
+          <Text>OR SIGN UP WITH EMAIL</Text>
+        </HeaderFour>
+        <FormContainer>
+          <FormRow>
+            <FormCol>
+              <Label htmlFor="fname">First name</Label>
+              <Input
                 type="text"
                 id="fname"
                 name="firstname"
                 placeholder="e.g Kim"
               />
-            </div>
-            <div className={styles.login_form_col}>
-              <label htmlFor="gender">Gender</label>
-              <select>
+            </FormCol>
+            <FormCol>
+              <Label htmlFor="gender">Gender</Label>
+              <Select>
                 <option>You are...</option>
                 <option>a man</option>
                 <option>a woman</option>
-              </select>
-            </div>
-          </div>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col_birth}>
-              <label htmlFor="birth">Birthday</label>
-              <div className={styles.login_form_row_birth}>
-                <select>
-                  <option>Day</option>
-                  <option>a man</option>
-                  <option>a woman</option>
-                </select>
-                <select>
-                  <option>Month</option>
-                  <option>a man</option>
-                  <option>a woman</option>
-                </select>
-                <select>
-                  <option>Year</option>
-                  <option>a man</option>
-                  <option>a woman</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col}>
-              <label htmlFor="City">City</label>
-              <input
+              </Select>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <FormBirthCol>
+                <Label htmlFor="birth">Birthday</Label>
+                <FormBirthRow>
+                  <Select>
+                    <option>Day</option>
+                    <option>a man</option>
+                    <option>a woman</option>
+                  </Select>
+                  <Select>
+                    <option>Month</option>
+                    <option>a man</option>
+                    <option>a woman</option>
+                  </Select>
+                  <Select>
+                    <option>Year</option>
+                    <option>a man</option>
+                    <option>a woman</option>
+                  </Select>
+                </FormBirthRow>
+              </FormBirthCol>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Label htmlFor="City">City</Label>
+              <Input
                 type="text"
                 id="city"
                 name="city"
                 placeholder="e.g London"
               />
-            </div>
-            <div className={styles.login_form_col}>
-              <label htmlFor="type">You're here to...</label>
-              <select>
+            </FormCol>
+            <FormCol>
+              <Label htmlFor="type">You're here to...</Label>
+              <Select>
                 <option>Select</option>
                 <option>Chat</option>
                 <option>Make new friends</option>
                 <option>Date</option>
-              </select>
-            </div>
-          </div>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col}>
-              <label htmlFor="email">Email address</label>
-              <input
+              </Select>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Label htmlFor="email">Email address</Label>
+              <Input
                 type="email"
                 id="email"
                 name="email"
                 placeholder="e.g example@example.com"
               />
-            </div>
-          </div>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col}>
-              <label htmlFor="password">Password</label>
-              <input
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <FormCol>
+              <Label htmlFor="password">Password</Label>
+              <Input
                 type="password"
                 id="password"
                 name="password"
                 placeholder="At least 8 characters"
               />
-            </div>
-          </div>
-          <div className={styles.login_form_row}>
-            <div className={styles.login_form_col_btn}>
-              <input type="submit" value="SIGN UP" />
-            </div>
-          </div>
-        </form>
-      </div>
-      <div></div>
-    </div>
+            </FormCol>
+          </FormRow>
+          <FormRow>
+            <Link to={LOGIN} className={styles.login_btn}>
+              <Input type="submit" value="SIGN UP" />
+            </Link>
+          </FormRow>
+        </FormContainer>
+      </LoginFormContainer>
+    </SectionFormContainer>
   );
 };
 
