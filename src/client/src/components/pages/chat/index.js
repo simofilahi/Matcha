@@ -4,8 +4,8 @@ import { icon, placeholder, iconSize } from "src/values";
 import {
   FlexContainer,
   Wrapper,
-  LeftSection,
-  RightSection,
+  LeftSectionContainer,
+  RightSectionContainer,
   HeaderItem,
   ChatList,
   Options,
@@ -17,11 +17,11 @@ import {
   Avatar,
   ChatSearch,
   ChatListSection,
-  MessageInput,
+  MessageInputContainer,
   MessagesContent,
   ChatSearchIcon,
   ChatSearchContainer,
-  MessageButtons,
+  MessageButtonsContainer,
   MessageButton,
   MessageContainer,
   MessageButtonContainer,
@@ -33,40 +33,36 @@ import {
   ChatSearchWrapper,
 } from "./styles";
 
+const FriendChatItem = () => {
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((item) => {
+    return (
+      <ChatItem>
+        <Avatar>
+          <Avatar.Img></Avatar.Img>
+        </Avatar>
+        <UserName>bilal</UserName>
+      </ChatItem>
+    );
+  });
+};
+
+const FriendChatSearch = () => {
+  return (
+    <ChatSearchWrapper>
+      <ChatSearchContainer>
+        <ChatSearchIcon className={icon.search}></ChatSearchIcon>
+        <ChatSearch placeholder={placeholder.search}></ChatSearch>
+      </ChatSearchContainer>
+    </ChatSearchWrapper>
+  );
+};
+
 const FriendsChatList = (props) => {
   return (
     <ChatListSection>
-      <ChatSearchWrapper>
-        <ChatSearchContainer>
-          <ChatSearchIcon className={icon.search}></ChatSearchIcon>
-          <ChatSearch placeholder={placeholder.search}></ChatSearch>
-        </ChatSearchContainer>
-      </ChatSearchWrapper>
+      <FriendChatSearch />
       <ChatList>
-        <ChatItem>
-          <Avatar>
-            <Avatar.Img></Avatar.Img>
-          </Avatar>
-          <UserName>bilal</UserName>
-        </ChatItem>
-        <ChatItem>
-          <Avatar>
-            <Avatar.Img></Avatar.Img>
-          </Avatar>
-          <UserName>brahim</UserName>
-        </ChatItem>
-        <ChatItem>
-          <Avatar>
-            <Avatar.Img></Avatar.Img>
-          </Avatar>
-          <UserName>bilal</UserName>
-        </ChatItem>
-        <ChatItem>
-          <Avatar>
-            <Avatar.Img></Avatar.Img>
-          </Avatar>
-          <UserName>brahim</UserName>
-        </ChatItem>
+        <FriendChatItem />
       </ChatList>
     </ChatListSection>
   );
@@ -84,26 +80,32 @@ const Header = () => {
   );
 };
 
-const MessageInputComponent = () => {
+const MessageButtons = () => {
+  return (
+    <MessageButtonsContainer>
+      <MessageButton type="typing">
+        <Icon className={icon.keyboard} size={"24px"} />
+      </MessageButton>
+      <MessageButton type="emotion">
+        <Icon className={icon.emotion} size={"24px"} />
+      </MessageButton>
+      <MessageButton type="uploadImage">
+        <Icon className={icon.image} size={"24px"} />
+      </MessageButton>
+      <MessageButton type="send">
+        <Icon className={icon.send} size={"24px"} />
+      </MessageButton>
+    </MessageButtonsContainer>
+  );
+};
+
+const MessageInput = () => {
   return (
     <MessageContainer>
-      <MessageInput></MessageInput>
+      <MessageInputContainer></MessageInputContainer>
       <MessageButtonContainer>
         <Box flex={"60%"} />
-        <MessageButtons>
-          <MessageButton type="typing">
-            <Icon className={icon.keyboard} size={"24px"} />
-          </MessageButton>
-          <MessageButton type="emotion">
-            <Icon className={icon.emotion} size={"24px"} />
-          </MessageButton>
-          <MessageButton type="uploadImage">
-            <Icon className={icon.image} size={"24px"} />
-          </MessageButton>
-          <MessageButton type="send">
-            <Icon className={icon.send} size={"24px"} />
-          </MessageButton>
-        </MessageButtons>
+        <MessageButtons />
       </MessageButtonContainer>
     </MessageContainer>
   );
@@ -113,7 +115,7 @@ const MessagesArea = () => {
   return (
     <BodyItem>
       <MessagesContent></MessagesContent>
-      <MessageInputComponent />
+      <MessageInput />
     </BodyItem>
   );
 };
@@ -137,18 +139,30 @@ const FriendChatInfo = () => {
   );
 };
 
+const LeftSection = () => {
+  return (
+    <LeftSectionContainer>
+      <Header />
+      <FriendsChatList />
+    </LeftSectionContainer>
+  );
+};
+
+const RightSection = () => {
+  return (
+    <RightSectionContainer>
+      <FriendChatInfo />
+      <MessagesArea />
+    </RightSectionContainer>
+  );
+};
+
 const ChatPage = () => {
   return (
     <Wrapper>
       <FlexContainer>
-        <LeftSection>
-          <Header />
-          <FriendsChatList />
-        </LeftSection>
-        <RightSection>
-          <FriendChatInfo />
-          <MessagesArea />
-        </RightSection>
+        <LeftSection />
+        <RightSection />
       </FlexContainer>
     </Wrapper>
   );

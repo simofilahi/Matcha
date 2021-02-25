@@ -18,13 +18,13 @@ export const FlexContainer = styled.div`
   box-shadow: 1px 2px 50px 1px #e9e9e9;
 `;
 
-export const RightSection = styled.div`
+export const RightSectionContainer = styled.div`
   flex: 2;
   display: flex;
   flex-direction: column;
 `;
 
-export const LeftSection = styled.div`
+export const LeftSectionContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -196,7 +196,7 @@ export const MessageContainer = styled.div`
   flex-direction: column;
 `;
 
-export const MessageInput = styled.textarea`
+export const MessageInputContainer = styled.textarea`
   flex: 60%;
   width: 100%;
   border: none;
@@ -209,17 +209,18 @@ export const MessageButtonContainer = styled.div`
   flex-direction: row;
 `;
 
-export const MessageButtons = styled.div`
+export const MessageButtonsContainer = styled.div`
   flex: 40%;
   display: flex;
   padding-left: 20px;
   align-items: center;
 `;
 
-export const Box = styled.div`
-  flex: ${(props) => props.flex};
-`;
-
 export const MessageButton = styled.div`
   flex: 1;
+`;
+
+// UTILS
+export const Box = styled.div`
+  flex: ${(props) => props.flex};
 `;
