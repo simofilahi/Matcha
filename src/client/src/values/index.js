@@ -14,12 +14,16 @@ const icon = {
   send: "far fa-paper-plane",
   search: "fas fa-search",
   ellipsis: "fas fa-ellipsis-v",
+  // SEARCH PAGE ICONS,
+  camera: "fas fa-camera",
+  heart: "fas fa-heart",
+  message: "fas fa-comment-dots",
 };
 
 const iconSize = {
-  small: 16,
-  medium: 24,
-  large: 32,
+  small: "16px",
+  medium: "24px,
+  large: "32px",
 };
 
 const fontSize = {
