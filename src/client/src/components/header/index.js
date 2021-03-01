@@ -2,7 +2,6 @@ import React from "react";
 import { HeaderContainer, NavBar } from "./styles";
 import { Link } from "react-router-dom";
 import { LIKES, CHAT, EXPLORE, VIEW, SEARCH } from "src/constants";
-import LikesPage from "src/components/pages/like";
 
 const Header = ({ props, children }) => {
   return (

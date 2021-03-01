@@ -1,5 +1,5 @@
 import React from "react";
-import { LikePage } from "src/components";
+import { LikePage } from "src/components/pages";
 
 const LikeContainer = (props) => {
   return <LikePage></LikePage>;

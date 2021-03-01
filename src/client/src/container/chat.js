@@ -1,14 +1,8 @@
 import React from "react";
-import {
-    ChatPage,
-} from '../components';
+import { ChatPage } from "src/components/pages";
 
 const ChatContainer = (props) => {
-    return (
-        <ChatPage>
-           
-        </ChatPage>
-    );
-}
+  return <ChatPage></ChatPage>;
+};
 
 export default ChatContainer;

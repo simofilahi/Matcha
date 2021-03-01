@@ -1,15 +1,8 @@
 import React from "react";
-import {
-    Home,
-} from '../components';
+import { Home } from "src/components/pages";
 
-const Homecontainer = (props) => {
-    console.log(`props ==> ${props}`);
-    return (
-        <Home>
-           
-        </Home>
-    );
-}
+const HomeContainer = (props) => {
+  return <Home></Home>;
+};
 
-export default Homecontainer;
+export default HomeContainer;

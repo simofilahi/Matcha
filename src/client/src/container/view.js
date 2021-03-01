@@ -1,14 +1,8 @@
 import React from "react";
-import {
-    ViewPage,
-} from '../components';
+import { ViewPage } from "src/components/pages";
 
 const ViewContainer = (props) => {
-    return (
-        <ViewPage>
-           
-        </ViewPage>
-    );
-}
+  return <ViewPage></ViewPage>;
+};
 
 export default ViewContainer;
