@@ -4,6 +4,7 @@ const color = {
   azureRadiance: "#0076FF",
   white: "#ffffff",
   hitGray: "#AAB3B8",
+  havelockBlue: "#3D93D3",
 };
 
 const icon = {
@@ -18,11 +19,13 @@ const icon = {
   camera: "fas fa-camera",
   heart: "fas fa-heart",
   message: "fas fa-comment-dots",
+  // EXPLORE PAGE
+  dislike: "far fa-times-circle",
 };
 
 const iconSize = {
   small: "16px",
-  medium: "24px,
+  medium: "24px",
   large: "32px",
 };
 

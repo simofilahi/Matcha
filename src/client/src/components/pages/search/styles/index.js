@@ -36,6 +36,15 @@ export const InteractionRow = styled.div`
   display: none;
 `;
 
+export const FlexIconWrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+`;
+
 export const GridItem = styled.div`
   background-color: white;
   width: 250px;
@@ -47,6 +56,11 @@ export const GridItem = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  /* transition: width 1s, height 1s;
+  &:hover {
+    height: 260px;
+    width: 260px;
+  } */
   &:hover ${UserInfoContainer} {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -54,10 +68,14 @@ export const GridItem = styled.div`
   &:hover ${InteractionRow} {
     width: 100%;
     height: 50px;
+    border: 1px ${color.mercury} solid;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     background-color: ${color.white};
     display: flex;
+    ${FlexIconWrapper}:nth-child(2) {
+      border-left: 1px ${color.mercury} solid;
+    }
   }
 `;
 
@@ -71,15 +89,6 @@ export const UserPhotosInfo = styled.div`
 export const IconWrapper = styled.div`
   padding-right: 10px;
   padding-left: 5px;
-`;
-
-export const FlexIconWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex: 1;
 `;
 
 export const PhotosCount = styled.div`

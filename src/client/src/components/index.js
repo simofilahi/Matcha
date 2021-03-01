@@ -1,9 +1,0 @@
-export { default as Register } from "./pages/register";
-export { default as Login } from "./pages/login";
-export { default as Home } from "./pages/home";
-export { default as Search } from "./pages/search";
-export { default as LikePage } from "./pages/like";
-export { default as ViewPage } from "./pages/view";
-export { default as ExplorePage } from "./pages/explore";
-export { default as ChatPage } from "./pages/chat";
-export { default as SearchPage } from "./pages/search";
