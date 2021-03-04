@@ -21,6 +21,10 @@ const icon = {
   message: "fas fa-comment-dots",
   // EXPLORE PAGE
   dislike: "far fa-times-circle",
+  // LOGIN PAGE
+  facebook: "fab fa-facebook",
+  twiter: "fab fa-twitter",
+  instagram: "fab fa-instagram",
 };
 
 const iconSize = {

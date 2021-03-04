@@ -8,6 +8,7 @@ import ChatContainer from "src/container/chat";
 import ExploreContainer from "src/container/explore";
 import ViewContainer from "src/container/view";
 import SearchContainer from "src/container/search";
+import Header from "src/components/header";
 
 import {
   ROOT,
@@ -24,7 +25,7 @@ import {
 const Router = () => {
   return (
     <BrowserRouter>
-      {/* <HOME.Header /> */}
+      {/* <Header /> */}
       <Switch>
         <Route path={REGISTER} component={RegisterContainer} />
         <Route path={LOGIN} component={LoginContainer} />
