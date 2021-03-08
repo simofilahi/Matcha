@@ -1,5 +1,6 @@
 // COLORS
 const color = {
+  bayOfMany: "#273B80",
   mercury: "#E5E5E5",
   neonCarrot: "#FF8C34",
   azureRadiance: "#0076FF",
@@ -53,6 +54,9 @@ const placeholder = {
   search: "Search",
   email: "e.g example@example.com",
   password: "At least 8 characters",
+  username: "User name",
+  firstname: "First name",
+  lastname: "Last name",
 };
 
 //  SCREEN SIZE
