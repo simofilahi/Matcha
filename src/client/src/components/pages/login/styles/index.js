@@ -72,16 +72,36 @@ export const IconWrapper = styled.div`
 
 export const IconContainer = styled.div`
   /* MOBILE SCREEN */
-  padding: 1.5px;
-
+  height: 22px;
+  width: 22px;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  background-color: ${color.white};
+  i {
+    text-align: center;
+    color: ${color.crusta};
+  }
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
-    padding: 2px;
+    height: 35px;
+    width: 35px;
+    padding: 1.5px;
+    i {
+      font-size: 26px;
+    }
   }
 
   /* DESKTOP SCREEN */
   @media only screen and (${device.desktop}) {
-    padding: 3px;
+    height: 40px;
+    width: 40px;
+    padding: 2px;
+    i {
+      font-size: 28px;
+    }
   }
 `;
 

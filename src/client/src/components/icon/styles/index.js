@@ -3,8 +3,10 @@ import { color, iconSize, device } from "src/values";
 
 export const IC = styled.i`
   /* MOBILE SCREEN */
-  color: ${color.mercury};
+  flex: 1;
+  color: ${color.white};
   font-size: ${(props) => props.size};
+
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
     font-size: ${iconSize.medium};
