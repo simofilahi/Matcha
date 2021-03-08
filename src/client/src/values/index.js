@@ -51,6 +51,8 @@ const fontSize = {
 //  PLACEHOLDERS
 const placeholder = {
   search: "Search",
+  email: "e.g example@example.com",
+  password: "At least 8 characters",
 };
 
 //  SCREEN SIZE

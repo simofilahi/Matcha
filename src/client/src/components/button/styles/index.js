@@ -12,7 +12,8 @@ export const CustomButton = styled.div`
   font-weight: bold;
   color: white;
   a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: ${color.white};
+    cursor: pointer;
   }
 `;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { color, device, screenSize } from "src/values";
+
+import { color, device } from "src/values";
 
 // WHOLE PAGE CONTAINER
 export const LoginContainer = styled.div`
@@ -33,19 +34,20 @@ export const InfoWrapper = styled.div`
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
+    flex: 1;
+    ::after {
+      content: "*_-";
+      visibility: hidden;
+      flex: 1;
+    }
   }
 
   /* DESKTOP SCREEN */
   @media only screen and (${device.desktop}) {
     flex: 1.5;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-between;
-    background-image: linear-gradient(-75deg, #f7b733 0%, #fc4a1a 100%);
-    color: ${color.white};
     ::after {
       content: none;
+      flex: 0;
     }
   }
 `;
@@ -102,12 +104,12 @@ export const WebSiteInfos = styled.div`
 
 export const WebSiteTitle = styled.h1`
   /* MOBILE SCREEN */
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
-    font-size: 4rem;
+    font-size: 4.5rem;
     font-weight: bold;
   }
 
@@ -120,20 +122,22 @@ export const WebSiteTitle = styled.h1`
 
 export const CustomParagraph = styled.p`
   /* MOBILE SCREEN */
-  font-size: 0.5rem;
+  font-size: 0.8rem;
   font-weight: bold;
-  line-height: 1.3;
+  line-height: 1;
   margin-bottom: 1rem;
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    margin-bottom: 2rem;
   }
 
   /* DESKTOP SCREEN */
   @media only screen and (${device.desktop}) {
     font-size: 2rem;
-    font-weight: bold;
-    line-height: 1.3;
+    line-height: 1.5;
     margin-bottom: 2rem;
   }
 `;
@@ -149,7 +153,7 @@ export const FbSignUpBtn = styled.a`
   color: ${color.white};
   background-color: ${color.indigo};
   border-radius: 50px;
-  font-size: 0.5rem;
+  font-size: 0.6rem;
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
@@ -164,7 +168,24 @@ export const FbSignUpBtn = styled.a`
     padding: 8px;
     max-width: 350px;
     color: ${color.white};
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+  }
+`;
+
+export const FooterContainer = styled.div`
+  /* MOBILE SCREEN */
+  display: none;
+
+  /* TABLET SCREEN */
+  @media only screen and (${device.tablet}) {
+  }
+
+  /* DESKTOP SCREEN */
+  @media only screen and (${device.desktop}) {
+    display: flex;
+    flex: 1;
+    align-self: flex-start;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -174,17 +195,18 @@ export const ConverstationCount = styled.div`
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
-    /* display: block;
+    display: block;
     align-self: flex-start;
-    padding: 20px; */
+    height: 80px;
+    padding: 20px;
   }
 
   /* DESKTOP SCREEN */
   @media only screen and (${device.desktop}) {
     display: block;
     align-self: flex-start;
+    height: 80px;
     padding: 20px;
-    flex: 1;
   }
 `;
 // ************************************************
@@ -322,7 +344,34 @@ export const SignUpButton = styled.input`
 
 export const ForgotPassContainer = styled.div`
   align-self: center;
-  color: ${color.paleSky};
+  color: ${color.indigo};
   text-decoration: underline;
 `;
+
+export const StoreWrapper = styled.div`
+  /* MOBILE SCREEN */
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  /* TABLET SCREEN */
+  @media only screen and (${device.tablet}) {
+    justify-content: center;
+    margin-right: 0px;
+  }
+  /* DESKTOP SCREEN */
+  @media only screen and (${device.desktop}) {
+    justify-content: flex-end;
+    margin-right: 0px;
+  }
+`;
+
+export const StoreContainer = styled.div`
+  height: 100px;
+  width: 400px;
+  max-width: 400px;
+  display: flex;
+`;
+
 //  *************************************************
