@@ -7,3 +7,4 @@ export { default as ViewPage } from "./view";
 export { default as ExplorePage } from "./explore";
 export { default as ChatPage } from "./chat";
 export { default as SearchPage } from "./search";
+export { default as ProfileInfosPage } from "./profileInfos";

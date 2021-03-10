@@ -4,7 +4,7 @@ import { color, iconSize, device } from "src/values";
 export const IC = styled.i`
   /* MOBILE SCREEN */
   flex: 1;
-  color: ${color.white};
+  color: ${color.Boulder};
   font-size: ${(props) => props.size};
 
   /* TABLET SCREEN */

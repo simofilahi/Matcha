@@ -12,6 +12,11 @@ const color = {
   tundora: "#4A4A4A",
   curiousBlue: "#3498DB",
   paleSky: "#6D7C85",
+  electricViolet: "#7839F9",
+  // ONBOARDING PROFILE INFORMATION PAGE
+  wildSand: "#F6F6F6",
+  Boulder: "#767676",
+  Alto: "#D6D6D6",
 };
 
 // ICON CLASS NAME
@@ -49,6 +54,12 @@ const fontSize = {
   large: "32px",
 };
 
+// Custom  Size
+const CustomSize = (fontSize, size = 0) => {
+  fontSize = fontSize.replace(/\D/g, "");
+  return `${parseInt(fontSize) + size}px`;
+};
+
 //  PLACEHOLDERS
 const placeholder = {
   search: "Search",
@@ -57,6 +68,7 @@ const placeholder = {
   username: "User name",
   firstname: "First name",
   lastname: "Last name",
+  searchForMore: "Search for more",
 };
 
 //  SCREEN SIZE
@@ -69,6 +81,7 @@ const placeholder = {
 //   desktop: "2560px",
 // };
 
+// SCREEN SIZE
 const screenSize = {
   mobile: "600px",
   tablet: "768px",
@@ -84,10 +97,21 @@ const screenSize = {
 //   laptop: `(min-width: ${screenSize.laptop})`,
 //   desktop: `(min-width: ${screenSize.desktop})`,
 // };
+
+// DEVICE SIZE
 const device = {
   mobile: `min-width: ${screenSize.mobile}`,
   tablet: `min-width: ${screenSize.tablet}`,
   desktop: `min-width: ${screenSize.desktop}`,
 };
 
-export { color, icon, placeholder, iconSize, fontSize, device, screenSize };
+export {
+  color,
+  icon,
+  placeholder,
+  iconSize,
+  fontSize,
+  device,
+  screenSize,
+  CustomSize,
+};
