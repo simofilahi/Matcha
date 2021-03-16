@@ -3,7 +3,7 @@ import { color, fontSize, CustomSize } from "src/values";
 
 export const Wrapper = styled.div`
   height: 200px;
-  width: 400px;
+  width: 385px;
   display: flex;
   flex-direction: column;
   border: 1.5px solid ${color.wildSand};

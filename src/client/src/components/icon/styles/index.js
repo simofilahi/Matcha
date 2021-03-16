@@ -4,16 +4,16 @@ import { color, iconSize, device } from "src/values";
 export const IC = styled.i`
   /* MOBILE SCREEN */
   flex: 1;
-  color: ${color.Boulder};
+  color: ${(props) => (props.color ? props.color : color.Boulder)};
   font-size: ${(props) => props.size};
 
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
-    font-size: ${iconSize.medium};
+    font-size: ${(props) => props.size};
   }
 
   /* DESKTOP SCREEN */
   @media only screen and (${device.desktop}) {
-    font-size: ${iconSize.large};
+    font-size: ${(props) => props.size};
   }
 `;

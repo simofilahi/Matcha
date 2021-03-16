@@ -7,4 +7,5 @@ export const EXPLORE = "/explore";
 export const CHAT = "/chat";
 export const SEARCH = "/search";
 export const VIEW = "/view";
-export const onBoardingProfileInfo = "/onboarding/profile-inforamation";
+export const ONBOARDINGPROFILEINFO = "/onboarding/profile-inforamation";
+export const PROFILE = "/profile";

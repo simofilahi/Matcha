@@ -10,6 +10,7 @@ import ViewContainer from "src/container/view";
 import SearchContainer from "src/container/search";
 import ProfileInfosContainer from "src/container/profileInfos";
 import Header from "src/components/header";
+import ProfileContainer from "src/container/profile";
 
 import {
   ROOT,
@@ -21,7 +22,8 @@ import {
   CHAT,
   EXPLORE,
   VIEW,
-  onBoardingProfileInfo,
+  ONBOARDINGPROFILEINFO,
+  PROFILE,
 } from "src/constants";
 
 const Router = () => {
@@ -29,9 +31,10 @@ const Router = () => {
     <BrowserRouter>
       {/* <Header /> */}
       <Switch>
+        <Route path={PROFILE} component={ProfileContainer} />
         <Route path={REGISTER} component={RegisterContainer} />
         <Route path={LOGIN} component={LoginContainer} />
-        <Route path={onBoardingProfileInfo} component={ProfileInfosContainer} />
+        <Route path={ONBOARDINGPROFILEINFO} component={ProfileInfosContainer} />
         <Route path={LIKES} component={LikeContainer} />
         <Route path={VIEW} component={ViewContainer} />
         <Route path={CHAT} component={ChatContainer} />

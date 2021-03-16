@@ -38,6 +38,9 @@ const icon = {
   facebook: "fab fa-facebook",
   twiter: "fab fa-twitter",
   instagram: "fab fa-instagram",
+  // SETTING PAGE
+  gear: "fas fa-cog",
+  galary: "fas fa-th-large",
 };
 
 // ICON SIZE
@@ -57,6 +60,7 @@ const fontSize = {
 // Custom  Size
 const CustomSize = (fontSize, size = 0) => {
   fontSize = fontSize.replace(/\D/g, "");
+
   return `${parseInt(fontSize) + size}px`;
 };
 
@@ -69,6 +73,10 @@ const placeholder = {
   firstname: "First name",
   lastname: "Last name",
   searchForMore: "Search for more",
+  // BIRTHDAY SELECT
+  day: "Day",
+  month: "Month",
+  year: "Year",
 };
 
 //  SCREEN SIZE

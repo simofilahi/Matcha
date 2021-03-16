@@ -1,14 +1,29 @@
-import { Container, Wrapper, UploadText, CustomText } from "./styles";
+import {
+  Container,
+  Wrapper,
+  UploadText,
+  CustomText,
+  PhotosList,
+  Photo,
+  FlexContainer,
+} from "./styles";
 
 const UploadPhoto = () => {
   return (
-    <Wrapper>
-      <Container>
-        <UploadText>
-          Drag and Drop here or <CustomText>upload</CustomText>
-        </UploadText>
-      </Container>
-    </Wrapper>
+    <FlexContainer>
+      <Wrapper>
+        <Container>
+          <UploadText>
+            Drag and Drop here or <CustomText>upload</CustomText>
+          </UploadText>
+        </Container>
+      </Wrapper>
+      <PhotosList>
+        {[0, 1, 2, 3, 4].map((item) => (
+          <Photo />
+        ))}
+      </PhotosList>
+    </FlexContainer>
   );
 };
 

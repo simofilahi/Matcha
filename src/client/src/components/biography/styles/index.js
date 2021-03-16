@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { color, CustomSize, fontSize } from "src/values";
 
 export const Wrapper = styled.div`
-  height: 200px;
   width: 400px;
   display: flex;
   flex-direction: column;
+  margin: 5px;
 `;
 
 export const BiographyText = styled.span`
