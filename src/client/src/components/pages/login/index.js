@@ -35,6 +35,7 @@ import { REGISTER } from "src/constants";
 import { icon, iconSize, placeholder } from "src/values";
 import Icon from "src/components/icon";
 import Button from "src/components/button";
+import ButtonIcon from "src/components/buttonIcon";
 
 const Login = ({ props, children }) => (
   <LoginContainer>{children}</LoginContainer>
@@ -61,11 +62,11 @@ const WebSiteDesc = () => {
     <WebSiteInfos>
       <WebSiteTitle>MATCHA</WebSiteTitle>
       <CustomParagraph>Welcome Back!</CustomParagraph>
-      <FbSignUpBtn>
+      <ButtonIcon data={"hey"}>
         <Icon className={icon.facebook} size={iconSize.small} />
         <span>Login With Facebook</span>
         <span></span>
-      </FbSignUpBtn>
+      </ButtonIcon>
     </WebSiteInfos>
   );
 };

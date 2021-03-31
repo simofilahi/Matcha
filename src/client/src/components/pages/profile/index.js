@@ -25,9 +25,29 @@ import {
   PhotoContainer,
   PhotoText,
   PhotoIconContainer,
+  ProgressBar,
+  ProgressBarButton,
+  CompleteProfileText,
+  ProgressCountName,
+  ProgressCount,
+  ProfileCompletionText,
+  ProgressContainer,
+  LocationText,
+  LocationName,
+  LocationMapContainer,
+  LocationContainer,
+  DatingChoiceContainer,
+  DatingChoiceQuestion,
+  DatingChoiceAnswer,
+  InterestsWrapper,
+  InterestsTitle,
+  InterestsList,
 } from "./styles";
 import Icon from "src/components/icon";
+import ButtonIcon from "src/components/buttonIcon";
 import { color, CustomSize, icon, iconSize } from "src/values";
+
+import SideBar from "src/components/sideBar";
 
 const UserInfo = () => {
   return (
@@ -99,18 +119,55 @@ const Photos = () => {
 };
 
 const ProfilePage = () => {
+  console.log(color.black);
   return (
     <Wrapper>
+      <SideBar />
       <Container>
         <UserInfo />
         <Photos />
         <SpliterContainer>
           <InfoArea>
             <Popularity></Popularity>
-            <ProfileCompletion></ProfileCompletion>
-            <Location></Location>
-            <DatingChoice></DatingChoice>
-            <Interests></Interests>
+            <ProfileCompletion>
+              <ProfileCompletionText>Profile Completion:</ProfileCompletionText>
+              <ProgressContainer>
+                <ProgressBar>
+                  <ProgressCount>
+                    <ProgressCountName>20%</ProgressCountName>
+                  </ProgressCount>
+                </ProgressBar>
+                <ProgressBarButton>
+                  <ButtonIcon
+                    color={color.black}
+                    bgColor={color.white}
+                    height={"40px"}
+                  >
+                    <Icon className={icon.fire} color={color.lavenderRose} />
+                    <CompleteProfileText>Complete Profile</CompleteProfileText>
+                  </ButtonIcon>
+                </ProgressBarButton>
+              </ProgressContainer>
+            </ProfileCompletion>
+            <Location>
+              <LocationContainer>
+                <LocationText>Location</LocationText>
+                <LocationName>Khouribga</LocationName>
+                <LocationMapContainer></LocationMapContainer>
+              </LocationContainer>
+            </Location>
+            <DatingChoice>
+              <DatingChoiceContainer>
+                <DatingChoiceQuestion>I'm here to</DatingChoiceQuestion>
+                <DatingChoiceAnswer>Date</DatingChoiceAnswer>
+              </DatingChoiceContainer>
+            </DatingChoice>
+            <Interests>
+              <InterestsWrapper>
+                <InterestsTitle>100 interests</InterestsTitle>
+                <InterestsList></InterestsList>
+              </InterestsWrapper>
+            </Interests>
           </InfoArea>
           <VerificationProfile></VerificationProfile>
         </SpliterContainer>

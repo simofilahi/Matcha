@@ -5,6 +5,7 @@ const color = {
   neonCarrot: "#FF8C34",
   azureRadiance: "#0076FF",
   white: "#ffffff",
+  black: "#000000",
   hitGray: "#AAB3B8",
   havelockBlue: "#3D93D3",
   indigo: "#4562C7",
@@ -13,10 +14,11 @@ const color = {
   curiousBlue: "#3498DB",
   paleSky: "#6D7C85",
   electricViolet: "#7839F9",
-  // ONBOARDING PROFILE INFORMATION PAGE
   wildSand: "#F6F6F6",
   Boulder: "#767676",
   Alto: "#D6D6D6",
+  mountainMeadow: "#15CC79",
+  lavenderRose: "#F99DF0",
 };
 
 // ICON CLASS NAME
@@ -41,6 +43,7 @@ const icon = {
   // SETTING PAGE
   gear: "fas fa-cog",
   galary: "fas fa-th-large",
+  fire: "fas fa-fire-alt",
 };
 
 // ICON SIZE

@@ -98,7 +98,6 @@ export const GalaryButton = styled.div`
 export const PhotosRow = styled.div`
   height: 150px;
   width: 100%;
-  background-color: orchid;
   display: flex;
 `;
 
@@ -125,14 +124,13 @@ export const PhotoText = styled.div`
 
 export const SpliterContainer = styled.div`
   flex: 1;
-  background-color: orange;
   display: flex;
   flex-direction: row;
 `;
 
 export const InfoArea = styled.div`
   flex: 1;
-  background-color: goldenrod;
+  background-color: ${color.white};
 `;
 
 export const VerificationProfile = styled.div`
@@ -147,29 +145,157 @@ export const Popularity = styled.div`
   background-color: rebeccapurple;
 `;
 
+// ************** profile compeletion
 export const ProfileCompletion = styled.div`
   height: 150px;
   width: 100%;
-  background-color: ghostwhite;
+  display: flex;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-bottom: 1px solid ${color.mercury};
+  display: flex;
+  flex-direction: column;
+  ::after {
+    content: "";
+    flex: 1;
+  }
 `;
 
+export const ProfileCompletionText = styled.span`
+  color: ${color.black};
+  font-size: ${CustomSize(fontSize.small, 4)};
+  padding-top: 40px;
+  padding-left: 10px;
+`;
+
+export const ProgressContainer = styled.div`
+  flex: 1;
+  display: flex;
+  align-items: center;
+`;
+
+export const ProgressBar = styled.div`
+  height: 15px;
+  flex: 4;
+  margin: 5px;
+  background-color: ${color.mercury};
+  border-radius: 10px;
+  display: flex;
+`;
+
+export const ProgressCount = styled.div`
+  display: flex;
+  width: 20%;
+  background-color: ${color.electricViolet};
+  border-radius: 10px;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
+export const ProgressCountName = styled.div`
+  color: ${color.white};
+  font-size: ${fontSize.small};
+`;
+
+export const ProgressBarButton = styled.div`
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const CompleteProfileText = styled.span`
+  color: ${color.black};
+  font-size: ${CustomSize(fontSize.small, 5)};
+`;
+
+// ***************************
+
+// **************** LOCATION
 export const Location = styled.div`
   height: 250px;
   width: 100%;
-  background-color: violet;
+  border-bottom: 1px solid ${color.mercury};
 `;
 
-export const DatingChoice = styled.div`
+export const LocationContainer = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const LocationText = styled.span`
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: ${fontSize.medium};
+`;
+
+export const LocationName = styled.span`
+  margin-top: 2px;
+  margin-bottom: 2px;
+  color: ${color.mercury};
+`;
+
+export const LocationMapContainer = styled.div`
+  margin-top: 10px;
+  margin-bottom: 2px;
+  border: 1px solid ${color.mercury};
   height: 150px;
   width: 100%;
-  background-color: olive;
+  border-radius: 8px;
 `;
 
+// ****************
+
+// ************ DATE CHOICES
+export const DatingChoice = styled.div`
+  height: 120px;
+  width: 100%;
+  border-bottom: 1px solid ${color.mercury};
+`;
+
+export const DatingChoiceContainer = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const DatingChoiceQuestion = styled.span`
+  font-size: ${fontSize.medium};
+  padding-bottom: 10px;
+`;
+
+export const DatingChoiceAnswer = styled.span`
+  color: ${color.mercury};
+`;
+
+// ****************
+
+// ************* INTERESTS
 export const Interests = styled.div`
   height: 200px;
   width: 100%;
-  background-color: chocolate;
+  border-bottom: 1px solid ${color.mercury};
 `;
+
+export const InterestsWrapper = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const InterestsTitle = styled.span`
+  font-size: ${fontSize.medium};
+  padding-bottom: 10px;
+`;
+
+export const InterestsList = styled.div`
+  background-color: red;
+  height: 120px;
+  width: 100%;
+`;
+
+// ***************
 
 export const PersonalInfo = styled.div`
   height: 250px;

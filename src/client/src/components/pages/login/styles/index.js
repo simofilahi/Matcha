@@ -162,36 +162,6 @@ export const CustomParagraph = styled.p`
   }
 `;
 
-export const FbSignUpBtn = styled.a`
-  /* MOBILE SCREEN */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 4px;
-  max-width: 200px;
-  text-decoration: none;
-  color: ${color.white};
-  background-color: ${color.indigo};
-  border-radius: 50px;
-  font-size: 0.6rem;
-
-  /* TABLET SCREEN */
-  @media only screen and (${device.tablet}) {
-    padding: 8px;
-    max-width: 350px;
-    color: ${color.white};
-    font-size: 1.2rem;
-  }
-
-  /* DESKTOP SCREEN */
-  @media only screen and (${device.desktop}) {
-    padding: 8px;
-    max-width: 350px;
-    color: ${color.white};
-    font-size: 1.5rem;
-  }
-`;
-
 export const FooterContainer = styled.div`
   /* MOBILE SCREEN */
   display: none;
