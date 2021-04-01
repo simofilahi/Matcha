@@ -16,6 +16,11 @@ export const ButtonIC = styled.div`
   color: ${(props) => props.color || color.white};
   border-radius: 8px;
   font-size: ${CustomSize(fontSize.small, 6)};
+  ${({ border }) =>
+    border &&
+    `
+    border: 1px solid ${color.mercury};
+  `}
   ::after {
     content: "";
     flex: 1;

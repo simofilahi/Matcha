@@ -11,6 +11,7 @@ import SearchContainer from "src/container/search";
 import ProfileInfosContainer from "src/container/profileInfos";
 import Header from "src/components/header";
 import ProfileContainer from "src/container/profile";
+import SettingsContainer from "src/container/settings";
 
 import {
   ROOT,
@@ -24,6 +25,7 @@ import {
   VIEW,
   ONBOARDINGPROFILEINFO,
   PROFILE,
+  SETTINGS,
 } from "src/constants";
 
 const Router = () => {
@@ -41,6 +43,7 @@ const Router = () => {
         <Route path={SEARCH} component={SearchContainer} />
         <Route path={EXPLORE} component={ExploreContainer} />
         <Route path={HOME} component={HomeContainer} />
+        <Route path={SETTINGS} component={SettingsContainer} />
         <Route Path={ROOT}>
           <Redirect to={HOME}>
             <HomeContainer />

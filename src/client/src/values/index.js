@@ -19,6 +19,7 @@ const color = {
   Alto: "#D6D6D6",
   mountainMeadow: "#15CC79",
   lavenderRose: "#F99DF0",
+  dustyGray: "#949494",
 };
 
 // ICON CLASS NAME
@@ -44,6 +45,7 @@ const icon = {
   gear: "fas fa-cog",
   galary: "fas fa-th-large",
   fire: "fas fa-fire-alt",
+  pen: "fas fa-pencil-alt",
 };
 
 // ICON SIZE

@@ -42,6 +42,16 @@ import {
   InterestsWrapper,
   InterestsTitle,
   InterestsList,
+  PersonalUserInfosContainer,
+  PersonalInfoTitle,
+  PersonalInfoBio,
+  PersonalInfoContainer,
+  LanguagesTitle,
+  LanguageContainer,
+  LanguageName,
+  VerificationProfileContainer,
+  VerificationProfileText,
+  VerificationProfileDesc,
 } from "./styles";
 import Icon from "src/components/icon";
 import ButtonIcon from "src/components/buttonIcon";
@@ -118,8 +128,109 @@ const Photos = () => {
   );
 };
 
+const ProfileCompletionCmp = () => {
+  return (
+    <ProfileCompletion>
+      <ProfileCompletionText>Profile Completion:</ProfileCompletionText>
+      <ProgressContainer>
+        <ProgressBar>
+          <ProgressCount>
+            <ProgressCountName>20%</ProgressCountName>
+          </ProgressCount>
+        </ProgressBar>
+        <ProgressBarButton>
+          <ButtonIcon
+            color={color.black}
+            bgColor={color.white}
+            height={"40px"}
+            border={true}
+          >
+            <Icon className={icon.fire} color={color.lavenderRose} />
+            <CompleteProfileText>Complete Profile</CompleteProfileText>
+          </ButtonIcon>
+        </ProgressBarButton>
+      </ProgressContainer>
+    </ProfileCompletion>
+  );
+};
+
+const LocationCmp = () => {
+  return (
+    <Location>
+      <LocationContainer>
+        <LocationText>Location</LocationText>
+        <LocationName>Khouribga</LocationName>
+        <LocationMapContainer></LocationMapContainer>
+      </LocationContainer>
+    </Location>
+  );
+};
+
+const DatingChoiceCmp = () => {
+  return (
+    <DatingChoice>
+      <DatingChoiceContainer>
+        <DatingChoiceQuestion>I'm here to</DatingChoiceQuestion>
+        <DatingChoiceAnswer>Date</DatingChoiceAnswer>
+      </DatingChoiceContainer>
+    </DatingChoice>
+  );
+};
+
+const InterestsCmp = () => {
+  return (
+    <Interests>
+      <InterestsWrapper>
+        <InterestsTitle>100 interests</InterestsTitle>
+        <InterestsList></InterestsList>
+      </InterestsWrapper>
+    </Interests>
+  );
+};
+
+const PersonalInfoCmp = () => {
+  return (
+    <PersonalInfo>
+      <PersonalInfoContainer>
+        <PersonalUserInfosContainer>
+          <PersonalInfoTitle>Personal info</PersonalInfoTitle>
+          <PersonalInfoBio>
+            Write a few words about your temperament, personality, attitude to
+            life and people. What distinguishes you from the crowd? What are
+            your positive and negative traits?
+          </PersonalInfoBio>
+        </PersonalUserInfosContainer>
+      </PersonalInfoContainer>
+    </PersonalInfo>
+  );
+};
+
+const LanguagesCmp = () => {
+  return (
+    <Languages>
+      <LanguageContainer>
+        <LanguagesTitle>Languages</LanguagesTitle>
+        <LanguageName>English</LanguageName>
+      </LanguageContainer>
+    </Languages>
+  );
+};
+
+const VerificationProfileCmp = () => {
+  return (
+    <VerificationProfile>
+      <VerificationProfileContainer>
+        <VerificationProfileText>Verifications</VerificationProfileText>
+        <VerificationProfileDesc>
+          Verify your profile with a photo of you and one other option from the
+          list below:
+        </VerificationProfileDesc>
+      </VerificationProfileContainer>
+    </VerificationProfile>
+  );
+};
+
 const ProfilePage = () => {
-  console.log(color.black);
   return (
     <Wrapper>
       <SideBar />
@@ -128,48 +239,14 @@ const ProfilePage = () => {
         <Photos />
         <SpliterContainer>
           <InfoArea>
-            <Popularity></Popularity>
-            <ProfileCompletion>
-              <ProfileCompletionText>Profile Completion:</ProfileCompletionText>
-              <ProgressContainer>
-                <ProgressBar>
-                  <ProgressCount>
-                    <ProgressCountName>20%</ProgressCountName>
-                  </ProgressCount>
-                </ProgressBar>
-                <ProgressBarButton>
-                  <ButtonIcon
-                    color={color.black}
-                    bgColor={color.white}
-                    height={"40px"}
-                  >
-                    <Icon className={icon.fire} color={color.lavenderRose} />
-                    <CompleteProfileText>Complete Profile</CompleteProfileText>
-                  </ButtonIcon>
-                </ProgressBarButton>
-              </ProgressContainer>
-            </ProfileCompletion>
-            <Location>
-              <LocationContainer>
-                <LocationText>Location</LocationText>
-                <LocationName>Khouribga</LocationName>
-                <LocationMapContainer></LocationMapContainer>
-              </LocationContainer>
-            </Location>
-            <DatingChoice>
-              <DatingChoiceContainer>
-                <DatingChoiceQuestion>I'm here to</DatingChoiceQuestion>
-                <DatingChoiceAnswer>Date</DatingChoiceAnswer>
-              </DatingChoiceContainer>
-            </DatingChoice>
-            <Interests>
-              <InterestsWrapper>
-                <InterestsTitle>100 interests</InterestsTitle>
-                <InterestsList></InterestsList>
-              </InterestsWrapper>
-            </Interests>
+            {/* <Popularity></Popularity> */}
+            <ProfileCompletionCmp />
+            <LocationCmp />
+            <DatingChoiceCmp />
+            <InterestsCmp />
+            <PersonalInfoCmp />
           </InfoArea>
-          <VerificationProfile></VerificationProfile>
+          <VerificationProfileCmp />
         </SpliterContainer>
       </Container>
     </Wrapper>

@@ -13,12 +13,13 @@ import {
 
 import { useState } from "react";
 
-const BirthDay = () => {
+const BirthDay = (props) => {
   const [open, setStatus] = useState(false);
 
+  const { height, width } = props;
   return (
-    <Wrapper>
-      <BirthDayText>Birthday</BirthDayText>
+    <Wrapper height={height} width={width}>
+      {/* <BirthDayText>Birthday</BirthDayText> */}
       <InputContainer>
         <Day onClick={() => setStatus((prevState) => !prevState)}>
           {/* <TextDay>Day</TextDay> */}

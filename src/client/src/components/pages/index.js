@@ -9,3 +9,4 @@ export { default as ChatPage } from "./chat";
 export { default as SearchPage } from "./search";
 export { default as ProfileInfosPage } from "./profileInfos";
 export { default as ProfilePage } from "./profile";
+export { default as SettingsPage } from "./settings";

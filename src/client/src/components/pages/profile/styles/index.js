@@ -133,12 +133,31 @@ export const InfoArea = styled.div`
   background-color: ${color.white};
 `;
 
+// *************** Verification
 export const VerificationProfile = styled.div`
   width: 200px;
   height: 100%;
-  background-color: greenyellow;
+  background-color: white;
+  border-left: 1px solid ${color.mercury};
 `;
 
+export const VerificationProfileContainer = styled.div`
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const VerificationProfileText = styled.span`
+  font-size: ${fontSize.medium};
+`;
+
+export const VerificationProfileDesc = styled.div`
+  font-size: ${CustomSize(fontSize.small, 2)};
+  color: ${color.mercury};
+  padding-top: 10px;
+`;
+
+// **************
 export const Popularity = styled.div`
   height: 200px;
   width: 100%;
@@ -297,14 +316,54 @@ export const InterestsList = styled.div`
 
 // ***************
 
+// *************** PERSONAL INFORMATION
 export const PersonalInfo = styled.div`
-  height: 250px;
+  height: 150px;
   width: 100%;
-  background-color: lavender;
+  border-bottom: 1px solid ${color.mercury};
 `;
 
-export const Languages = styled.div`
-  height: 200px;
-  width: 100%;
-  background-color: tomato;
+export const PersonalInfoContainer = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 `;
+
+export const PersonalUserInfosContainer = styled.div`
+  flex: 1;
+`;
+
+export const PersonalInfoTitle = styled.span`
+  font-size: ${fontSize.medium};
+`;
+
+export const PersonalInfoBio = styled.p`
+  font-size: ${CustomSize(fontSize.small, 2)};
+  color: ${color.mercury};
+  padding-top: 10px;
+`;
+
+// ***************
+
+// *************** LANGUAGES
+export const Languages = styled.div`
+  height: 100px;
+  width: 100%;
+`;
+
+export const LanguageContainer = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const LanguagesTitle = styled.div`
+  font-size: ${fontSize.medium};
+`;
+
+export const LanguageName = styled.span`
+  font-size: ${CustomSize(fontSize.small, 2)};
+  color: ${color.mercury};
+  padding-top: 10px;
+`;
+// ****************

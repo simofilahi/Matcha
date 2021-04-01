@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { color, CustomSize, fontSize } from "src/values";
 
 export const Wrapper = styled.div`
-  height: 70px;
-  width: 400px;
+  /* height: ${(props) => props.height || "70px"}; */
+  width: ${(props) => props.width || "400px"};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: red;
 `;
 
 export const InputContainer = styled.div`
