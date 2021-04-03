@@ -232,7 +232,7 @@ export const CompleteProfileText = styled.span`
 
 // **************** LOCATION
 export const Location = styled.div`
-  height: 250px;
+  height: 300px;
   width: 100%;
   border-bottom: 1px solid ${color.mercury};
 `;
@@ -243,15 +243,63 @@ export const LocationContainer = styled.div`
   flex-direction: column;
 `;
 
+export const LocationInfoIcon = styled.div`
+  display: none;
+`;
+
+export const LocationInfoTextContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+export const LocationInfoContainer = styled.div`
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  &:hover {
+    ${LocationInfoIcon} {
+      height: 30px;
+      width: 30px;
+      border: 1px solid ${color.mercury};
+      background-color: ${color.whidSand};
+      border-radius: 8px;
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+`;
+
+export const LocationSearchBtnAndSearch = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 2px;
+`;
+
+export const LocationSearchContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LocationButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const LocationText = styled.span`
-  margin-top: 2px;
+  margin-top: 5px;
   margin-bottom: 2px;
   font-size: ${fontSize.medium};
 `;
 
 export const LocationName = styled.span`
-  margin-top: 2px;
-  margin-bottom: 2px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   color: ${color.mercury};
 `;
 

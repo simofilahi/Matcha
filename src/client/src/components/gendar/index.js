@@ -12,32 +12,42 @@ import {
   ChoiceText,
 } from "./styles";
 
-const Gendar = () => {
+const Gender = (props) => {
+  const { isHor, height, width } = props;
   return (
-    <Conatiner>
+    <Conatiner width={width}>
       <Row>
         <Col>
-          <Male>
+          <Male height={height} width={width}>
             <Emoji>👨</Emoji>
             <MaleText>Male</MaleText>
           </Male>
         </Col>
         <Col>
-          <Female>
+          <Female height={height} width={width}>
             <Emoji>👧</Emoji>
             <FemaleText>Female</FemaleText>
           </Female>
         </Col>
+        {isHor ? (
+          <Col>
+            <MoreChoice height={height} width={width}>
+              <ChoiceText>More Choice</ChoiceText>
+            </MoreChoice>
+          </Col>
+        ) : null}
       </Row>
-      <Row>
-        <Col>
-          <MoreChoice>
-            <ChoiceText>More Choice</ChoiceText>
-          </MoreChoice>
-        </Col>
-      </Row>
+      {!isHor && (
+        <Row>
+          <Col>
+            <MoreChoice height={height} width={width}>
+              <ChoiceText>More Choice</ChoiceText>
+            </MoreChoice>
+          </Col>
+        </Row>
+      )}
     </Conatiner>
   );
 };
 
-export default Gendar;
+export default Gender;

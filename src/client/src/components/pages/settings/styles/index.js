@@ -25,7 +25,7 @@ export const UserBasicInfoIconContainer = styled.div`
 `;
 
 export const UserBasicInfo = styled.div`
-  height: 200px;
+  height: ${(props) => (props.isExpanded ? "320px" : "200px")};
   width: 100%;
   cursor: pointer;
   &:hover {
@@ -38,6 +38,7 @@ export const UserBasicInfo = styled.div`
       margin-left: 20px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
   }
 `;
@@ -95,30 +96,39 @@ export const UserBasicInfoRowValue = styled.span`
 export const EditUserBasicInfoContainer = styled.div`
   display: flex;
   padding: 20px;
-  width: 600px;
-  max-width: 600px;
-  align-items: center;
-  justify-content: space-between;
+  width: 800px;
+  max-width: 800px;
+  height: 400px;
   flex-direction: column;
 `;
 
 export const EditUserBasicInfoRow = styled.div`
+  height: 50px;
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  flex: 1;
+  align-items: center;
+  margin: 5px 0px;
 `;
 
 export const EditUserBasicInfoRowKey = styled.span`
-  flex: 2;
-  background-color: red;
+  flex: 1;
+  padding: 10px 0px;
+  color: ${color.dustyGray};
 `;
 
 export const EditUserBasicInfoRowValue = styled.div`
-  flex: 4;
-  background-color: green;
+  flex: 3;
   display: flex;
   align-items: center;
+`;
+
+export const EditUserBasicInfoBtnContainer = styled.div`
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 // ********************
@@ -137,7 +147,7 @@ export const UserAccountIconContainer = styled.div`
 `;
 
 export const UserAccount = styled.div`
-  height: 200px;
+  height: ${(props) => (props.isExpanded ? "320px" : "200px")};
   width: 100%;
   cursor: pointer;
   &:hover {
@@ -150,6 +160,7 @@ export const UserAccount = styled.div`
       margin-left: 20px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
   }
 `;
@@ -181,6 +192,7 @@ export const UserAccountInfoRow = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid ${color.mercury};
   padding: 15px 0px;
+
   ::after {
     content: "";
     flex: 1;
@@ -200,6 +212,46 @@ export const UserAccountRowValueContainer = styled.div`
 export const UserAccountRowValue = styled.span`
   font-size: ${CustomSize(fontSize.small, 2)};
   color: ${color.dustyGray};
+`;
+
+export const EditUserAccount = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+`;
+
+export const EditUserAccounContainerFlex = styled.div`
+  width: 800px;
+  max-width: 800px;
+`;
+
+export const EditUserAccountInfoRow = styled.div`
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const EditUserAccountInfoRowKey = styled.div`
+  flex: 1;
+  padding: 10px 0px;
+  color: ${color.dustyGray};
+`;
+
+export const EditUserAccountInfoValue = styled.div`
+  flex: 3;
+  padding: 10px 0px;
+  display: flex;
+`;
+
+export const EditUserAccountBtnContainer = styled.div`
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 // *******************

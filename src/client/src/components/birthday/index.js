@@ -18,10 +18,13 @@ const BirthDay = (props) => {
 
   const { height, width } = props;
   return (
-    <Wrapper height={height} width={width}>
+    <Wrapper width={width}>
       {/* <BirthDayText>Birthday</BirthDayText> */}
       <InputContainer>
-        <Day onClick={() => setStatus((prevState) => !prevState)}>
+        <Day
+          height={height}
+          onClick={() => setStatus((prevState) => !prevState)}
+        >
           {/* <TextDay>Day</TextDay> */}
           <OptionContainer open={open}>
             <Option value="Day">1</Option>
@@ -36,8 +39,8 @@ const BirthDay = (props) => {
             <Option value="Day">10</Option>
           </OptionContainer>
         </Day>
-        <Month></Month>
-        <Year></Year>
+        <Month height={height}></Month>
+        <Year height={height}></Year>
       </InputContainer>
     </Wrapper>
   );

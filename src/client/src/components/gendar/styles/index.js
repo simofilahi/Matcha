@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { color, fontSize, CustomSize } from "src/values";
 
 export const Conatiner = styled.div`
-  height: 100px;
-  width: 400px;
+  width: ${(props) => props.width || "350px"};
   display: flex;
   flex-direction: column;
+  justify-content: center;
 `;
 
 export const Male = styled.div`
@@ -15,7 +15,7 @@ export const Male = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: ${(props) => props.height || "35px"};
   cursor: pointer;
   &:hover {
     border: 1.5px solid ${color.electricViolet};
@@ -30,7 +30,7 @@ export const Female = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  height: 40px;
+  height: ${(props) => props.height || "35px"};
   &:hover {
     border: 1.5px solid ${color.electricViolet};
   }
@@ -68,7 +68,7 @@ export const MoreChoice = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40px;
+  height: ${(props) => props.height || "35px"};
   cursor: pointer;
   &:hover {
     border: 1.5px solid ${color.electricViolet};

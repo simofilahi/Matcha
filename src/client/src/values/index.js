@@ -82,6 +82,8 @@ const placeholder = {
   day: "Day",
   month: "Month",
   year: "Year",
+  // SETTINGS PAGE
+  location: "Type your location",
 };
 
 //  SCREEN SIZE

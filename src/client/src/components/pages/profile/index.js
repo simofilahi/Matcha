@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 import {
   Container,
   Wrapper,
@@ -52,10 +54,25 @@ import {
   VerificationProfileContainer,
   VerificationProfileText,
   VerificationProfileDesc,
+  LocationInfoContainer,
+  LocationInfoTextContainer,
+  LocationInfoIcon,
+  LocationSearchContainer,
+  LocationSearchBtnAndSearch,
+  LocationButtonContainer,
 } from "./styles";
 import Icon from "src/components/icon";
 import ButtonIcon from "src/components/buttonIcon";
-import { color, CustomSize, icon, iconSize } from "src/values";
+import {
+  color,
+  CustomSize,
+  icon,
+  iconSize,
+  placeholder,
+  fontSize,
+} from "src/values";
+import Search from "src/components/search";
+import Button from "src/components/button";
 
 import SideBar from "src/components/sideBar";
 
@@ -155,11 +172,64 @@ const ProfileCompletionCmp = () => {
 };
 
 const LocationCmp = () => {
+  // INIT STATE
+  const [isExpanded, setExpand] = useState(false);
+
+  // UPDATE ISEXPANDED
+  const updateExpanded = () => {
+    setExpand((prevState) => !prevState);
+  };
+
   return (
     <Location>
       <LocationContainer>
-        <LocationText>Location</LocationText>
-        <LocationName>Khouribga</LocationName>
+        <LocationInfoContainer>
+          <LocationInfoTextContainer onClick={updateExpanded}>
+            <LocationText>Location</LocationText>
+            <LocationInfoIcon>
+              <Icon className={icon.pen} />
+            </LocationInfoIcon>
+          </LocationInfoTextContainer>
+          {isExpanded ? (
+            <LocationSearchBtnAndSearch>
+              <LocationSearchContainer>
+                <Search
+                  height={"38px"}
+                  width={"450px"}
+                  placeholder={placeholder.location}
+                  iconColor={color.mercury}
+                  iconSize={CustomSize(iconSize.small, 2)}
+                />
+              </LocationSearchContainer>
+              <LocationButtonContainer>
+                <Button
+                  color={color.white}
+                  bgColor={color.electricViolet}
+                  height={"36px"}
+                  width={"200px"}
+                  fontSize={CustomSize(fontSize.small, 3)}
+                  border={true}
+                >
+                  Save
+                </Button>
+              </LocationButtonContainer>
+              <LocationButtonContainer>
+                <Button
+                  color={color.black}
+                  bgColor={color.white}
+                  height={"36px"}
+                  width={"200px"}
+                  fontSize={CustomSize(fontSize.small, 3)}
+                  border={true}
+                >
+                  Cancel
+                </Button>
+              </LocationButtonContainer>
+            </LocationSearchBtnAndSearch>
+          ) : (
+            <LocationName>Khouribga</LocationName>
+          )}
+        </LocationInfoContainer>
         <LocationMapContainer></LocationMapContainer>
       </LocationContainer>
     </Location>

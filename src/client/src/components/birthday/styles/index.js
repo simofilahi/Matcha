@@ -2,13 +2,11 @@ import styled from "styled-components";
 import { color, CustomSize, fontSize } from "src/values";
 
 export const Wrapper = styled.div`
-  /* height: ${(props) => props.height || "70px"}; */
-  width: ${(props) => props.width || "400px"};
+  width: ${(props) => props.width || "350px"};
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: red;
 `;
 
 export const InputContainer = styled.div`
@@ -18,7 +16,6 @@ export const InputContainer = styled.div`
 `;
 
 export const BirthDayText = styled.span`
-  height: 20px;
   width: 100%;
   margin-left: 15px;
   font-size: ${CustomSize(fontSize.small, 4)};
@@ -27,7 +24,7 @@ export const BirthDayText = styled.span`
 
 export const Day = styled.div`
   flex: 1;
-  height: 30px;
+  height: ${(props) => props.height || "35px"};
   border-radius: 8px;
   margin: 5px;
   border: 1.5px solid ${color.wildSand};
@@ -47,7 +44,7 @@ export const DayText = styled.span`
 
 export const Month = styled.div`
   flex: 1;
-  height: 30px;
+  ${(props) => props.height || "35px"};
   border-radius: 8px;
   margin: 5px;
   border: 1.5px solid ${color.wildSand};
@@ -55,7 +52,7 @@ export const Month = styled.div`
 
 export const Year = styled.div`
   flex: 1;
-  height: 30px;
+  ${(props) => props.height || "35px"};
   margin: 5px;
   border: 1.5px solid ${color.wildSand};
   border-radius: 8px;
