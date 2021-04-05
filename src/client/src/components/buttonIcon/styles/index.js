@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { color, device, fontSize, CustomSize } from "src/values";
+import { color, device, fontSize, CustomSize, rgbaColor } from "src/values";
 
 // BUTTON AND ICON CONTAINER
 export const ButtonIC = styled.div`
@@ -9,7 +9,7 @@ export const ButtonIC = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 4px;
-  width: 200px;
+  width: ${(props) => (props.width ? props.width : "200px")};
   text-decoration: none;
   height: ${(props) => props.height || "25px"};
   background-color: ${(props) => props.bgColor || color.crusta};
@@ -41,4 +41,7 @@ export const ButtonIC = styled.div`
     color: ${color.white};
     font-size: 1.5rem;
   }
+  /* box-shadow: 5px 5px 10px
+    ${(props) =>
+    props.shadowColor ? props.shadowColor : rgbaColor.electricViolet()}; */
 `;

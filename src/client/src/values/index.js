@@ -22,6 +22,12 @@ const color = {
   dustyGray: "#949494",
 };
 
+// RGBA COLOR
+const rgbaColor = {
+  electricViolet: () => "rgba(120, 57, 249, 0.5)",
+  Boulder: () => "rgba(118, 118, 118, 1)",
+};
+
 // ICON CLASS NAME
 const icon = {
   // CHAT PAGE ICONS
@@ -131,4 +137,5 @@ export {
   device,
   screenSize,
   CustomSize,
+  rgbaColor,
 };

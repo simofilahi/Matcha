@@ -22,8 +22,13 @@ export const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  background-image: linear-gradient(-75deg, #f7b733 0%, #fc4a1a 100%);
+  justify-content: center;
+  background-image: linear-gradient(
+    -75deg,
+    #fc4a1a 0%,
+    ${color.electricViolet} 100%
+  );
+
   color: ${color.white};
   ::after {
     content: "*_-";
@@ -78,10 +83,10 @@ export const IconContainer = styled.div`
   border-radius: 100%;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: ${color.white};
   i {
     text-align: center;
-    color: ${color.crusta};
   }
   /* TABLET SCREEN */
   @media only screen and (${device.tablet}) {
@@ -321,6 +326,7 @@ export const ButtonContainer = styled.div`
     flex: 1;
     max-width: 250px;
     align-self: flex-end;
+    padding: 20px;
   }
 `;
 
@@ -377,11 +383,11 @@ export const LoginText = styled.span`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  padding: 0px 25px;
 `;
 
 export const FormRow = styled.div`
   display: flex;
-  margin: 2px 0px;
   width: 100%;
   justify-content: center;
 `;
@@ -391,13 +397,14 @@ export const FormCol = styled.div`
   flex-direction: column;
   width: 100%;
   align-self: center;
+  padding-left: 10px;
 `;
 
 export const Label = styled.label`
   font-size: 16px;
   color: ${color.tundora};
   text-align: start;
-  margin: 25px 0px 15px 25px;
+  padding: 15px 0px;
 `;
 
 export const Input = styled.input`
@@ -411,13 +418,15 @@ export const Input = styled.input`
 export const SignUpButtonContainer = styled.div`
   width: 100%;
   margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 0px 10px;
 `;
 
 export const SignUpButton = styled.input`
   border: none;
   outline: none;
   color: ${color.white};
-  background-color: ${color.crusta};
+  background-color: ${color.electricViolet};
 `;
 
 export const ForgotPassContainer = styled.div`

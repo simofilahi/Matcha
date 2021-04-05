@@ -6,7 +6,7 @@ export const PlaceHolderText = styled.span``;
 export const Wrapper = styled.input`
   height: ${(props) => props.height || "40px"};
   width: ${(props) => props.width || "380px"};
-  margin: 5px;
+  margin-bottom: ${(props) => props.margin_bottom || "10px"};
   outline-style: none;
   border: 1.5px solid ${color.wildSand};
   &:hover {

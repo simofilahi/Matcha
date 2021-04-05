@@ -15,7 +15,7 @@ import {
   FormCol,
   SignUpButtonContainer,
   SignUpButton,
-  Input,
+  // Input,
   Label,
   LoginText,
   WebSiteTitle,
@@ -32,10 +32,20 @@ import Box from "src/components/box";
 import Footer from "src/components/footer";
 import { AppStore, PlayStore } from "src/components/appMobileStores/";
 import { REGISTER } from "src/constants";
-import { icon, iconSize, placeholder } from "src/values";
+import {
+  icon,
+  iconSize,
+  placeholder,
+  color,
+  fontSize,
+  CustomSize,
+  rgbaColor,
+} from "src/values";
 import Icon from "src/components/icon";
 import Button from "src/components/button";
 import ButtonIcon from "src/components/buttonIcon";
+import Input from "src/components/input";
+import FbSignButton from "src/components/fbAuthBtn";
 
 const Login = ({ props, children }) => (
   <LoginContainer>{children}</LoginContainer>
@@ -45,13 +55,25 @@ const SocialMediaIcons = () => {
   return (
     <IconWrapper>
       <IconContainer>
-        <Icon className={icon.facebook} size={iconSize.small} />
+        <Icon
+          className={icon.facebook}
+          size={iconSize.small}
+          color={color.electricViolet}
+        />
       </IconContainer>
       <IconContainer>
-        <Icon className={icon.instagram} size={iconSize.small} />
+        <Icon
+          className={icon.instagram}
+          size={iconSize.small}
+          color={color.electricViolet}
+        />
       </IconContainer>
       <IconContainer>
-        <Icon className={icon.twiter} size={iconSize.small} />
+        <Icon
+          className={icon.twiter}
+          size={iconSize.small}
+          color={color.electricViolet}
+        />
       </IconContainer>
     </IconWrapper>
   );
@@ -62,11 +84,18 @@ const WebSiteDesc = () => {
     <WebSiteInfos>
       <WebSiteTitle>MATCHA</WebSiteTitle>
       <CustomParagraph>Welcome Back!</CustomParagraph>
-      <ButtonIcon data={"hey"}>
-        <Icon className={icon.facebook} size={iconSize.small} />
-        <span>Login With Facebook</span>
-        <span></span>
-      </ButtonIcon>
+      <FbSignButton
+        iconName={icon.facebook}
+        size={iconSize.small}
+        height={"48px"}
+        width={"100%"}
+        bgColor={color.white}
+        icon={icon.facebook}
+        iconSize={CustomSize(fontSize.medium, 4)}
+        textBgColor={color.black}
+        text={"Login In With Facebook"}
+        iconColor={color.electricViolet}
+      ></FbSignButton>
     </WebSiteInfos>
   );
 };
@@ -102,8 +131,15 @@ Login.infoSection = ({ props, children }) => {
 const SignInBtn = () => {
   return (
     <ButtonContainer>
-      <Button>
-        <Link to={REGISTER}>Sign up</Link>
+      <Button
+        color={color.white}
+        bgColor={color.electricViolet}
+        height={"38px"}
+        width={"100%"}
+        fontSize={CustomSize(fontSize.small, 3)}
+        border={true}
+      >
+        <Link to={REGISTER}>Sign Up</Link>
       </Button>
     </ButtonContainer>
   );
@@ -112,8 +148,14 @@ const SignInBtn = () => {
 const SignUpBtn = () => {
   return (
     <SignUpButtonContainer>
-      <Button>
-        <SignUpButton type="submit" value="LOG IN" />
+      <Button
+        color={color.white}
+        bgColor={color.electricViolet}
+        height={"38px"}
+        width={"100%"}
+        fontSize={CustomSize(fontSize.small, 3)}
+      >
+        <Link to={REGISTER}>Sign up</Link>
       </Button>
     </SignUpButtonContainer>
   );
@@ -132,6 +174,9 @@ const EmailField = () => {
         id="email"
         name="email"
         placeholder={placeholder.email}
+        width={"100%"}
+        margin_bottom={"10px"}
+        height={"45px"}
       />
     </FormCol>
   );
@@ -146,6 +191,9 @@ const PasswordField = () => {
         id="password"
         name="password"
         placeholder={placeholder.password}
+        width={"100%"}
+        margin_bottom={"10px"}
+        height={"45px"}
       />
     </FormCol>
   );
