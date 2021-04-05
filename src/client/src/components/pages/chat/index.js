@@ -157,9 +157,10 @@ const RightSection = () => {
   );
 };
 
-const ChatPage = () => {
+const ChatPage = (props) => {
   return (
     <Wrapper>
+      {props.children}
       <FlexContainer>
         <LeftSection />
         <RightSection />

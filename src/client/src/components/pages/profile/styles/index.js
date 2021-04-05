@@ -273,16 +273,18 @@ export const LocationInfoContainer = styled.div`
 
 export const LocationSearchBtnAndSearch = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 5px;
   margin-bottom: 2px;
+  align-items: center;
 `;
 
 export const LocationSearchContainer = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+`;
+
+export const LocationButtonWrapper = styled.div`
+  margin: 0px 10px;
+  display: flex;
 `;
 
 export const LocationButtonContainer = styled.div`
@@ -340,7 +342,6 @@ export const DatingChoiceAnswer = styled.span`
 
 // ************* INTERESTS
 export const Interests = styled.div`
-  height: 200px;
   width: 100%;
   border-bottom: 1px solid ${color.mercury};
 `;
@@ -357,9 +358,38 @@ export const InterestsTitle = styled.span`
 `;
 
 export const InterestsList = styled.div`
-  background-color: red;
-  height: 120px;
   width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const InterstListItem = styled.div`
+  flex: 1;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: ${color.mercury};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ::before {
+    content: "*_*";
+    visibility: hidden;
+    flex: 1;
+  }
+`;
+
+export const InterstListItemText = styled.span`
+  font-size: ${CustomSize(fontSize.small, 2)};
+  color: ${color.dustyGray};
+  flex: 1;
+`;
+
+export const InterstListItemRemoveBtn = styled.div`
+  flex: 1;
+  padding-left: 8px;
+  cursor: pointer;
 `;
 
 // ***************

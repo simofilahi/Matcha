@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { CustomSize, fontSize, color } from "src/values";
 
 export const CustomButton = styled.div`
-  margin: 5px;
+  margin: ${(props) => (props.margin ? props.margin : "5px")};
   display: flex;
   align-items: center;
   justify-content: center;

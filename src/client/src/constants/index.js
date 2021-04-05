@@ -10,3 +10,5 @@ export const VIEW = "/view";
 export const ONBOARDINGPROFILEINFO = "/onboarding/profile-inforamation";
 export const PROFILE = "/profile";
 export const SETTINGS = "/settings";
+export const MATCH = "matched";
+export const VISITORS = "";

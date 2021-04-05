@@ -10,3 +10,4 @@ export { default as SearchPage } from "./search";
 export { default as ProfileInfosPage } from "./profileInfos";
 export { default as ProfilePage } from "./profile";
 export { default as SettingsPage } from "./settings";
+export { default as MatchPage } from "./match";

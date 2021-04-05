@@ -8,6 +8,7 @@ export const Wrapper = styled.aside`
   width: 300px;
   align-self: flex-start;
   padding: 0px 20px 0px 20px;
+  padding: 0px 20px;
 `;
 
 // WEB SITE TITLE CONTAINER
@@ -15,9 +16,9 @@ export const TitleContainer = styled.div`
   height: 100px;
   width: 100%;
   border-bottom: 1px solid ${color.mercury};
-  padding: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
 // WEB SITE TITLE
@@ -37,7 +38,6 @@ export const UserInfosContainer = styled.div`
 // AVATAR CONTAINER
 export const AvatarContainer = styled.div`
   align-self: center;
-  padding: 5px;
 `;
 
 // USER INFORAMTION
@@ -71,12 +71,13 @@ export const Text = styled.span`
 export const AppPagesContainer = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 10px 0px;
 `;
 
 // ITEM CONTAINER
 export const ItemContainer = styled.div`
   display: flex;
-  padding: 10px;
+  padding: 10px 0px;
   margin-top: 1px;
 `;
 
@@ -88,6 +89,10 @@ export const LinkText = styled.span`
   &:hover {
     color: ${color.electricViolet};
   }
+  a {
+    text-decoration: none;
+    color: ${color.Boulder};
+  }
 `;
 
 // LINK ICON CONTAINER
@@ -95,9 +100,9 @@ export const LinkIconContainer = styled.div``;
 
 // SUGGETED PEOPLE
 export const SuggestedPepoleContainer = styled.div`
-  margin-top: 50px;
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
 `;
 
 // SUGGESTED PEOPLE TEXT
@@ -130,4 +135,8 @@ export const GridItem = styled.div`
 // BUTTON CONTAINER
 export const ExploreButtonContainer = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
 `;

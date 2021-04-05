@@ -70,9 +70,10 @@ const AvatarCard = () => {
   );
 };
 
-const ExplorePage = () => {
+const ExplorePage = (props) => {
   return (
     <Wrapper>
+      {props.children}
       <FlexContainer>
         <UserCard />
         <UserInfo />

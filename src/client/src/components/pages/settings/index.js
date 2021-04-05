@@ -373,9 +373,10 @@ const UserAccountCmp = () => {
 };
 
 // SETTINGS PAGE COMPONENT
-const SettingsPage = () => {
+const SettingsPage = (props) => {
   return (
     <Wrapper>
+      {props.children}
       <Container>
         <BasicInfoCmp />
         <Box height={"20px"} />

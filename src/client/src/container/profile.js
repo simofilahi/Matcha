@@ -1,7 +1,12 @@
 import { ProfilePage } from "src/components/pages/";
+import SideBar from "src/components/sideBar";
 
-const ProfileContanier = () => {
-  return <ProfilePage />;
+const ProfileContanier = (props) => {
+  return (
+    <ProfilePage>
+      <SideBar />
+    </ProfilePage>
+  );
 };
 
 export default ProfileContanier;

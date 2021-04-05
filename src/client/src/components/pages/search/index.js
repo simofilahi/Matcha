@@ -52,9 +52,10 @@ const UserCard = () => {
   );
 };
 
-const Search = ({ props, children }) => {
+const Search = (props) => {
   return (
     <Wrapper>
+      {props.children}
       <GirdContainer>
         {Array.from({ length: 20 }, () => Math.floor(Math.random() * 10)).map(
           (item) => (

@@ -60,6 +60,10 @@ import {
   LocationSearchContainer,
   LocationSearchBtnAndSearch,
   LocationButtonContainer,
+  LocationButtonWrapper,
+  InterstListItem,
+  InterstListItemText,
+  InterstListItemRemoveBtn,
 } from "./styles";
 import Icon from "src/components/icon";
 import ButtonIcon from "src/components/buttonIcon";
@@ -76,6 +80,7 @@ import Button from "src/components/button";
 
 import SideBar from "src/components/sideBar";
 
+// USER INFOS
 const UserInfo = () => {
   return (
     <UserInfosRow>
@@ -104,6 +109,7 @@ const UserInfo = () => {
   );
 };
 
+// GET COLOR
 const getColor = (index) => {
   let num = index > 0 ? index % 2 : -1;
   let newColor;
@@ -121,6 +127,7 @@ const getColor = (index) => {
   return newColor;
 };
 
+// USER PHOTOS
 const Photos = () => {
   return (
     <PhotosRow>
@@ -145,6 +152,7 @@ const Photos = () => {
   );
 };
 
+// COMPLETE PROFILE
 const ProfileCompletionCmp = () => {
   return (
     <ProfileCompletion>
@@ -171,6 +179,70 @@ const ProfileCompletionCmp = () => {
   );
 };
 
+// SAVE BUTTON
+const LocationEditSaveBtnCmp = () => {
+  return (
+    <LocationButtonContainer>
+      <Button
+        color={color.white}
+        bgColor={color.electricViolet}
+        height={"36px"}
+        width={"100px"}
+        fontSize={CustomSize(fontSize.small, 3)}
+        border={true}
+      >
+        Save
+      </Button>
+    </LocationButtonContainer>
+  );
+};
+
+// CANCEL BUTTON
+const LocationEditCancelBtnCmp = () => {
+  return (
+    <LocationButtonContainer>
+      <Button
+        color={color.black}
+        bgColor={color.white}
+        height={"36px"}
+        width={"100px"}
+        fontSize={CustomSize(fontSize.small, 3)}
+        border={true}
+      >
+        Cancel
+      </Button>
+    </LocationButtonContainer>
+  );
+};
+
+// SEARCH INPUT
+const SearchInputCmp = () => {
+  return (
+    <LocationSearchContainer>
+      <Search
+        height={"38px"}
+        width={"400px"}
+        placeholder={placeholder.location}
+        iconColor={color.mercury}
+        iconSize={CustomSize(iconSize.small, 2)}
+      />
+    </LocationSearchContainer>
+  );
+};
+
+// EDIT LOCATION INFOS
+const LocationEditCmp = () => {
+  return (
+    <LocationSearchBtnAndSearch>
+      <SearchInputCmp />
+      <LocationButtonWrapper>
+        <LocationEditSaveBtnCmp />
+        <LocationEditCancelBtnCmp />
+      </LocationButtonWrapper>
+    </LocationSearchBtnAndSearch>
+  );
+};
+
 const LocationCmp = () => {
   // INIT STATE
   const [isExpanded, setExpand] = useState(false);
@@ -191,41 +263,7 @@ const LocationCmp = () => {
             </LocationInfoIcon>
           </LocationInfoTextContainer>
           {isExpanded ? (
-            <LocationSearchBtnAndSearch>
-              <LocationSearchContainer>
-                <Search
-                  height={"38px"}
-                  width={"450px"}
-                  placeholder={placeholder.location}
-                  iconColor={color.mercury}
-                  iconSize={CustomSize(iconSize.small, 2)}
-                />
-              </LocationSearchContainer>
-              <LocationButtonContainer>
-                <Button
-                  color={color.white}
-                  bgColor={color.electricViolet}
-                  height={"36px"}
-                  width={"200px"}
-                  fontSize={CustomSize(fontSize.small, 3)}
-                  border={true}
-                >
-                  Save
-                </Button>
-              </LocationButtonContainer>
-              <LocationButtonContainer>
-                <Button
-                  color={color.black}
-                  bgColor={color.white}
-                  height={"36px"}
-                  width={"200px"}
-                  fontSize={CustomSize(fontSize.small, 3)}
-                  border={true}
-                >
-                  Cancel
-                </Button>
-              </LocationButtonContainer>
-            </LocationSearchBtnAndSearch>
+            <LocationEditCmp />
           ) : (
             <LocationName>Khouribga</LocationName>
           )}
@@ -236,6 +274,7 @@ const LocationCmp = () => {
   );
 };
 
+// DATING CHOICES
 const DatingChoiceCmp = () => {
   return (
     <DatingChoice>
@@ -247,17 +286,41 @@ const DatingChoiceCmp = () => {
   );
 };
 
+// INTERESTS
 const InterestsCmp = () => {
   return (
     <Interests>
       <InterestsWrapper>
         <InterestsTitle>100 interests</InterestsTitle>
-        <InterestsList></InterestsList>
+        <InterestsList>
+          {[
+            "MOVIES",
+            "MUSIC",
+            "1337",
+            "SPORT",
+            "EDUCATION",
+            "PARTIES",
+            "SWIMING",
+            "DANCING",
+            "TRAVEL",
+            "DATING",
+          ].map((item) => {
+            return (
+              <InterstListItem>
+                <InterstListItemText>{item}</InterstListItemText>
+                <InterstListItemRemoveBtn>
+                  <Icon className={icon.times} color={color.dustyGray} />
+                </InterstListItemRemoveBtn>
+              </InterstListItem>
+            );
+          })}
+        </InterestsList>
       </InterestsWrapper>
     </Interests>
   );
 };
 
+// PERSONAL INFOTAMTIONS
 const PersonalInfoCmp = () => {
   return (
     <PersonalInfo>
@@ -275,6 +338,7 @@ const PersonalInfoCmp = () => {
   );
 };
 
+// LANGUAGES
 const LanguagesCmp = () => {
   return (
     <Languages>
@@ -286,6 +350,7 @@ const LanguagesCmp = () => {
   );
 };
 
+// VERIFICATIN OF PROFILE
 const VerificationProfileCmp = () => {
   return (
     <VerificationProfile>
@@ -300,10 +365,11 @@ const VerificationProfileCmp = () => {
   );
 };
 
-const ProfilePage = () => {
+// PROFILE PAGE
+const ProfilePage = (props) => {
   return (
     <Wrapper>
-      <SideBar />
+      {props.children}
       <Container>
         <UserInfo />
         <Photos />

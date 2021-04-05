@@ -46,6 +46,8 @@ const icon = {
   galary: "fas fa-th-large",
   fire: "fas fa-fire-alt",
   pen: "fas fa-pencil-alt",
+  // PROFILE PAGE
+  times: "fas fa-times",
 };
 
 // ICON SIZE

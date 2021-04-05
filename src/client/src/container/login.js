@@ -2,7 +2,6 @@ import React from "react";
 import { Login } from "src/components/pages";
 
 const LoginContainer = () => {
-  console.log(Login);
   return (
     <>
       <Login>
