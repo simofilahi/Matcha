@@ -1,8 +1,17 @@
 import { CustomButton } from "./styles";
 import { color } from "src/values";
 const Button = (props) => {
-  console.log(props);
-  const { color, bgColor, height, fontSize, border, width, margin } = props;
+  const {
+    padding,
+    color,
+    bgColor,
+    height,
+    fontSize,
+    border,
+    width,
+    margin,
+  } = props;
+
   return (
     <CustomButton
       color={color}
@@ -12,6 +21,7 @@ const Button = (props) => {
       fontSize={fontSize}
       border={border}
       margin={margin}
+      padding={padding}
     >
       {props.children}
     </CustomButton>

@@ -20,6 +20,7 @@ const color = {
   mountainMeadow: "#15CC79",
   lavenderRose: "#F99DF0",
   dustyGray: "#949494",
+  torchRed: "#FF0033",
 };
 
 // RGBA COLOR

@@ -6,7 +6,7 @@ export const CustomButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
+  padding: ${(props) => (props.padding ? props.padding : "10px 20px")};
   width: ${(props) => props.width || "200px"};
   height: ${(props) => props.height || "25px"};
   background-color: ${(props) => props.bgColor || color.crusta};
