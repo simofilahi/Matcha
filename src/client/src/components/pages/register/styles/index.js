@@ -427,6 +427,9 @@ export const SignUpButton = styled.input`
   outline: none;
   color: ${color.white};
   background-color: ${color.electricViolet};
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
 `;
 
 export const ForgotPassContainer = styled.div`

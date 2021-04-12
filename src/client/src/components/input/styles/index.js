@@ -8,7 +8,8 @@ export const Wrapper = styled.input`
   width: ${(props) => props.width || "380px"};
   margin-bottom: ${(props) => props.margin_bottom || "10px"};
   outline-style: none;
-  border: 1.5px solid ${color.wildSand};
+  border: 1.5px solid
+    ${(props) => (props.touched ? color.torchRed : color.wildSand)};
   &:hover {
     border: 1.5px solid ${color.electricViolet};
   }

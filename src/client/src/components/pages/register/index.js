@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+
+// COMPONENT
 import {
   IconContainer,
   InfoWrapper,
@@ -32,6 +34,12 @@ import Box from "src/components/box";
 import Footer from "src/components/footer";
 import { AppStore, PlayStore } from "src/components/appMobileStores/";
 import { REGISTER } from "src/constants";
+import Icon from "src/components/icon";
+import Button from "src/components/button";
+import Input from "src/components/input";
+import FbSignButton from "src/components/fbAuthBtn";
+
+// VALUES
 import {
   color,
   icon,
@@ -40,10 +48,12 @@ import {
   fontSize,
   CustomSize,
 } from "src/values";
-import Icon from "src/components/icon";
-import Button from "src/components/button";
-import Input from "src/components/input";
-import FbSignButton from "src/components/fbAuthBtn";
+
+// LOGIC
+import { useForm, context } from "src/hooks/utils";
+
+// FORM WRAPPER
+import Formy from "src/components/formy";
 
 const Register = ({ props, children }) => (
   <LoginContainer>{children}</LoginContainer>
@@ -157,6 +167,7 @@ const SignUpBtn = () => {
       <Button
         color={color.white}
         bgColor={color.electricViolet}
+        padding={"5px"}
         height={"40px"}
         width={"100%"}
         fontSize={CustomSize(fontSize.small, 3)}
@@ -172,85 +183,145 @@ const ForgotPasswordText = () => (
 );
 
 const FirstNameField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
   return (
-    <FormCol>
-      <Label htmlFor="firstname">First name</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="firstname">First name *</Label>
       <Input
         type="text"
         id="firstname"
         name="firstname"
+        value={values["firstname"]}
         placeholder={placeholder.firstname}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.firstname}
       />
     </FormCol>
   );
 };
 
 const LastNameField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
   return (
-    <FormCol>
-      <Label htmlFor="lastname">Last name</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="lastname">Last name *</Label>
       <Input
         type="text"
         id="lastname"
         name="lastname"
+        value={values["lastname"]}
         placeholder={placeholder.lastname}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.lastname}
       />
     </FormCol>
   );
 };
 
 const UserNameField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
   return (
-    <FormCol>
-      <Label htmlFor="username">User name</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="username">Username *</Label>
       <Input
         type="text"
         id="username"
         name="username"
+        value={values["usename"]}
         placeholder={placeholder.username}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.username}
       />
     </FormCol>
   );
 };
 
 const EmailField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
   return (
-    <FormCol>
-      <Label htmlFor="email">Email</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="email">Email *</Label>
       <Input
         type="email"
         id="email"
         name="email"
+        value={values["email"]}
         placeholder={placeholder.email}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.email}
       />
     </FormCol>
   );
 };
 
 const PasswordField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
   return (
-    <FormCol>
-      <Label htmlFor="password">Password</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="password">Password *</Label>
       <Input
         type="password"
         id="password"
         name="password"
+        value={values["password"]}
         placeholder={placeholder.password}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.password}
+      />
+    </FormCol>
+  );
+};
+
+// CONFIRM PASSWORD
+const ConfirmPasswordField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
+  return (
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="password">Confirm Password *</Label>
+      <Input
+        type="password"
+        id="confirmPassword"
+        name="confirmPassword"
+        value={values["confirmPassword"]}
+        placeholder={placeholder.password}
+        width={"100%"}
+        margin_bottom={"10px"}
+        height={"45px"}
+        touched={touched.confirmPassword}
       />
     </FormCol>
   );
@@ -265,31 +336,57 @@ const LoginWithEmailText = () => {
 };
 
 const LoginForm = () => {
+  const SignUpSchema = {
+    firstname: "ss",
+  };
+
   return (
-    <FormContainer>
-      <LoginWithEmailText />
-      <Form>
-        <FormRow>
-          <FirstNameField />
-          <LastNameField />
-        </FormRow>
-        <FormRow>
-          <UserNameField />
-        </FormRow>
-        <FormRow>
-          <EmailField />
-        </FormRow>
-        <FormRow>
-          <PasswordField />
-        </FormRow>
-        <FormRow>
-          <SignUpBtn />
-        </FormRow>
-        <FormRow>
-          <ForgotPasswordText />
-        </FormRow>
-      </Form>
-    </FormContainer>
+    <Formy
+      initialValues={{
+        firstname: "",
+        lastname: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      }}
+      validationSchema={}
+    >
+      {({ values, handlChange, touched, errors, HandleFocus }) => {
+        return (
+          <context.Provider
+            value={[values, handlChange, HandleFocus, touched, errors]}
+          >
+            <FormContainer>
+              <LoginWithEmailText />
+              <Form>
+                <FormRow>
+                  <FirstNameField />
+                  <LastNameField />
+                </FormRow>
+                <FormRow>
+                  <UserNameField />
+                </FormRow>
+                <FormRow>
+                  <EmailField />
+                </FormRow>
+                <FormRow>
+                  <PasswordField />
+                </FormRow>
+                <FormRow>
+                  <ConfirmPasswordField />
+                </FormRow>
+                <FormRow>
+                  <SignUpBtn />
+                </FormRow>
+                <FormRow>
+                  <ForgotPasswordText />
+                </FormRow>
+              </Form>
+            </FormContainer>
+          </context.Provider>
+        );
+      }}
+    </Formy>
   );
 };
 
