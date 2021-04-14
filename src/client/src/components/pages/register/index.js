@@ -55,6 +55,9 @@ import { useForm, context } from "src/hooks/utils";
 // FORM WRAPPER
 import Formy from "src/components/formy";
 
+// FIELDS VALIDTOR
+import Validator from "src/utils/validator";
+
 const Register = ({ props, children }) => (
   <LoginContainer>{children}</LoginContainer>
 );
@@ -144,6 +147,7 @@ Register.infoSection = ({ props, children }) => {
   );
 };
 
+// SIGN IN BTN
 const SignInBtn = () => {
   return (
     <ButtonContainer>
@@ -161,6 +165,7 @@ const SignInBtn = () => {
   );
 };
 
+// SIGN UP BTN
 const SignUpBtn = () => {
   return (
     <SignUpButtonContainer>
@@ -178,10 +183,12 @@ const SignUpBtn = () => {
   );
 };
 
+// FORGOT PASSWORD FIELD
 const ForgotPasswordText = () => (
   <ForgotPassContainer>Forgot your password?</ForgotPassContainer>
 );
 
+// FIRST NAME FIELD
 const FirstNameField = () => {
   // CONTEXT
   const [values, handlChange, HandleFocus, touched, errors] = useContext(
@@ -189,7 +196,11 @@ const FirstNameField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.firstname ? true : false}
+    >
       <Label htmlFor="firstname">First name *</Label>
       <Input
         type="text"
@@ -206,6 +217,7 @@ const FirstNameField = () => {
   );
 };
 
+// LAST NAME FIELD
 const LastNameField = () => {
   // CONTEXT
   const [values, handlChange, HandleFocus, touched, errors] = useContext(
@@ -213,7 +225,11 @@ const LastNameField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.lastname ? true : false}
+    >
       <Label htmlFor="lastname">Last name *</Label>
       <Input
         type="text"
@@ -230,6 +246,7 @@ const LastNameField = () => {
   );
 };
 
+// USERNAME FIELD
 const UserNameField = () => {
   // CONTEXT
   const [values, handlChange, HandleFocus, touched, errors] = useContext(
@@ -237,7 +254,11 @@ const UserNameField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.username ? true : false}
+    >
       <Label htmlFor="username">Username *</Label>
       <Input
         type="text"
@@ -254,6 +275,7 @@ const UserNameField = () => {
   );
 };
 
+// EMAIL FIELD
 const EmailField = () => {
   // CONTEXT
   const [values, handlChange, HandleFocus, touched, errors] = useContext(
@@ -261,7 +283,11 @@ const EmailField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.email ? true : false}
+    >
       <Label htmlFor="email">Email *</Label>
       <Input
         type="email"
@@ -278,6 +304,7 @@ const EmailField = () => {
   );
 };
 
+// PASSWORD FIELD
 const PasswordField = () => {
   // CONTEXT
   const [values, handlChange, HandleFocus, touched, errors] = useContext(
@@ -285,7 +312,11 @@ const PasswordField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.password ? true : false}
+    >
       <Label htmlFor="password">Password *</Label>
       <Input
         type="password"
@@ -310,7 +341,11 @@ const ConfirmPasswordField = () => {
   );
 
   return (
-    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+    <FormCol
+      onChange={(e) => handlChange(e)}
+      onFocus={(e) => HandleFocus(e)}
+      error={errors?.firstname ? true : false}
+    >
       <Label htmlFor="password">Confirm Password *</Label>
       <Input
         type="password"
@@ -327,6 +362,7 @@ const ConfirmPasswordField = () => {
   );
 };
 
+// LOGIN WITH EMAIL TEXT
 const LoginWithEmailText = () => {
   return (
     <LoginTextContainer>
@@ -335,21 +371,43 @@ const LoginWithEmailText = () => {
   );
 };
 
+// LOGIN FORM
 const LoginForm = () => {
-  const SignUpSchema = {
-    firstname: "ss",
-  };
+  // VALIDATION FORM SCHEMA
+  const schema = Validator.object({
+    firstname: Validator.string().max(20).min(1).result(),
+    lastname: Validator.string().max(20).min(5).result(),
+    username: Validator.string().max(20).min(5).result(),
+    email: Validator.string().max(20).result(),
+    password: Validator.string().max(20).min(8).result(),
+    confirmPassword: Validator.string().max(20).min(8).result(),
+  });
 
   return (
     <Formy
       initialValues={{
         firstname: "",
         lastname: "",
+        username: "",
         email: "",
         password: "",
         confirmPassword: "",
       }}
-      validationSchema={}
+      onChange={(input) => {
+        schema.validate({ input });
+        return schema;
+      }}
+      // validationSchema={(values) => {
+      //   schema.validate({
+      //     firstname: values["firstname"],
+      //     lastname: values["lastname"],
+      //     username: values["username"],
+      //     email: values["email"],
+      //     password: values["password"],
+      //     confirmPassword: values["confirmPassword"],
+      //   });
+      //   return schema;
+      // }}
     >
       {({ values, handlChange, touched, errors, HandleFocus }) => {
         return (

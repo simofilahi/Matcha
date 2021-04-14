@@ -2,6 +2,7 @@ import React, { useState, createContext, useEffect } from "react";
 
 const useForm = (initState) => {
   const [values, setValue] = useState(initState);
+  const [errors, setError] = useState(initState);
   const [touched, setTouched] = useState({});
 
   return [
@@ -23,6 +24,8 @@ const useForm = (initState) => {
         };
       });
     },
+    errors,
+    setError,
   ];
 };
 
