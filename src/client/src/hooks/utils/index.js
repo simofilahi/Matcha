@@ -1,6 +1,6 @@
 import React, { useState, createContext, useEffect } from "react";
 
-const useForm = (initState) => {
+const useForm = (initState, schemaValidation) => {
   const [values, setValue] = useState(initState);
   const [errors, setError] = useState(initState);
   const [touched, setTouched] = useState({});
@@ -14,6 +14,15 @@ const useForm = (initState) => {
           [e.target.name]: e.target.value,
         };
       });
+      setError((prevState) => {
+        return {
+          ...prevState,
+          [e.target.name]: schemaValidation({
+            [e.target.name]: e.target.value,
+          }),
+        };
+      });
+      console.log(errors);
     },
     touched,
     (e) => {
@@ -25,7 +34,6 @@ const useForm = (initState) => {
       });
     },
     errors,
-    setError,
   ];
 };
 

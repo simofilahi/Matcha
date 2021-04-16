@@ -196,11 +196,7 @@ const FirstNameField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.firstname ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="firstname">First name *</Label>
       <Input
         type="text"
@@ -212,6 +208,7 @@ const FirstNameField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.firstname}
+        error={errors.firstname}
       />
     </FormCol>
   );
@@ -225,11 +222,7 @@ const LastNameField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.lastname ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="lastname">Last name *</Label>
       <Input
         type="text"
@@ -241,6 +234,7 @@ const LastNameField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.lastname}
+        error={errors.lastname ? true : false}
       />
     </FormCol>
   );
@@ -254,11 +248,7 @@ const UserNameField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.username ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="username">Username *</Label>
       <Input
         type="text"
@@ -270,6 +260,7 @@ const UserNameField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.username}
+        error={errors.username}
       />
     </FormCol>
   );
@@ -283,11 +274,7 @@ const EmailField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.email ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="email">Email *</Label>
       <Input
         type="email"
@@ -299,6 +286,7 @@ const EmailField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.email}
+        error={errors.email}
       />
     </FormCol>
   );
@@ -312,11 +300,7 @@ const PasswordField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.password ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="password">Password *</Label>
       <Input
         type="password"
@@ -328,6 +312,7 @@ const PasswordField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.password}
+        error={errors.password}
       />
     </FormCol>
   );
@@ -341,11 +326,7 @@ const ConfirmPasswordField = () => {
   );
 
   return (
-    <FormCol
-      onChange={(e) => handlChange(e)}
-      onFocus={(e) => HandleFocus(e)}
-      error={errors?.firstname ? true : false}
-    >
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="password">Confirm Password *</Label>
       <Input
         type="password"
@@ -357,6 +338,7 @@ const ConfirmPasswordField = () => {
         margin_bottom={"10px"}
         height={"45px"}
         touched={touched.confirmPassword}
+        error={errors.confirmPassword}
       />
     </FormCol>
   );
@@ -375,12 +357,12 @@ const LoginWithEmailText = () => {
 const LoginForm = () => {
   // VALIDATION FORM SCHEMA
   const schema = Validator.object({
-    firstname: Validator.string().max(20).min(1).result(),
-    lastname: Validator.string().max(20).min(5).result(),
-    username: Validator.string().max(20).min(5).result(),
-    email: Validator.string().max(20).result(),
-    password: Validator.string().max(20).min(8).result(),
-    confirmPassword: Validator.string().max(20).min(8).result(),
+    firstname: Validator.string().min(1).max(12).result(),
+    lastname: Validator.string().min(1).max(12).result(),
+    username: Validator.string().min(1).max(20).result(),
+    email: Validator.string().min(1).max(255).result(),
+    password: Validator.string().min(8).max(20).result(),
+    confirmPassword: Validator.min(8).max(20).string().result(),
   });
 
   return (
@@ -393,21 +375,7 @@ const LoginForm = () => {
         password: "",
         confirmPassword: "",
       }}
-      onChange={(input) => {
-        schema.validate({ input });
-        return schema;
-      }}
-      // validationSchema={(values) => {
-      //   schema.validate({
-      //     firstname: values["firstname"],
-      //     lastname: values["lastname"],
-      //     username: values["username"],
-      //     email: values["email"],
-      //     password: values["password"],
-      //     confirmPassword: values["confirmPassword"],
-      //   });
-      //   return schema;
-      // }}
+      schemaValidation={(data) => schema.validate(data)}
     >
       {({ values, handlChange, touched, errors, HandleFocus }) => {
         return (

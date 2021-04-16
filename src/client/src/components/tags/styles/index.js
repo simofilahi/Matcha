@@ -44,7 +44,6 @@ export const TagListItem = styled.div`
   border-radius: 0.5rem;
   cursor: pointer;
   background-color: ${({ selected }) => {
-    console.log(selected);
     return selected === true ? color.electricViolet : color.white;
   }};
 

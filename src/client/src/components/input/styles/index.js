@@ -9,10 +9,10 @@ export const Wrapper = styled.input`
   margin-bottom: ${(props) => props.margin_bottom || "10px"};
   outline-style: none;
   border: 1.5px solid
-    ${(props) => (props.touched ? color.torchRed : color.wildSand)};
-  &:hover {
+    ${(props) => (props.error ? color.torchRed : color.wildSand)};
+  /* &:hover {
     border: 1.5px solid ${color.electricViolet};
-  }
+  } */
   border-radius: 8px;
   padding-left: 10px;
   color: ${color.Boulder};

@@ -12,8 +12,10 @@ const Input = (props) => {
     name,
     value,
     touched,
+    error,
   } = props;
 
+  console.log(error);
   // UI
   return (
     <Wrapper
@@ -26,6 +28,7 @@ const Input = (props) => {
       margin_bottom={margin_bottom}
       placeholder={placeholder}
       touched={touched}
+      error={error ? true : false}
     ></Wrapper>
   );
 };
