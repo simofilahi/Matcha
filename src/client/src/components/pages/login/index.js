@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
+
+// ROUTER
 import { Link } from "react-router-dom";
+
+// COMPONENT
 import {
   IconContainer,
   InfoWrapper,
   WebSiteInfos,
   LoginContainer,
   ConverstationCount,
-  FbSignUpBtn,
   CustomParagraph,
   Form,
   FormContainer,
@@ -14,8 +17,6 @@ import {
   FormRow,
   FormCol,
   SignUpButtonContainer,
-  SignUpButton,
-  // Input,
   Label,
   LoginText,
   WebSiteTitle,
@@ -27,11 +28,17 @@ import {
   StoreWrapper,
   FooterContainer,
 } from "./styles";
-
-import Box from "src/components/box";
 import Footer from "src/components/footer";
 import { AppStore, PlayStore } from "src/components/appMobileStores/";
+import Icon from "src/components/icon";
+import Button from "src/components/button";
+import Input from "src/components/input";
+import FbSignButton from "src/components/fbAuthBtn";
+
+// CONSTANTS VALUES
 import { REGISTER } from "src/constants";
+
+// UI PREDEFINED VALUES;
 import {
   icon,
   iconSize,
@@ -41,17 +48,24 @@ import {
   CustomSize,
   rgbaColor,
 } from "src/values";
-import Icon from "src/components/icon";
-import Button from "src/components/button";
-import ButtonIcon from "src/components/buttonIcon";
-import Input from "src/components/input";
-import FbSignButton from "src/components/fbAuthBtn";
 
+// LOGIC
+import { context } from "src/hooks/utils";
+
+// FORM WRAPPER
+import Formy from "src/components/formy";
+
+// FIELDS VALIDTOR
+import Validator from "src/utils/validator";
+
+// ENTRY POINT COMPONENT
 const Login = ({ props, children }) => (
   <LoginContainer>{children}</LoginContainer>
 );
 
+// SOCIAL MEDIA ICONS CMP
 const SocialMediaIcons = () => {
+  // UI
   return (
     <IconWrapper>
       <IconContainer>
@@ -79,7 +93,9 @@ const SocialMediaIcons = () => {
   );
 };
 
+// WEBSITE DESCRIPTION
 const WebSiteDesc = () => {
+  // UI
   return (
     <WebSiteInfos>
       <WebSiteTitle>MATCHA</WebSiteTitle>
@@ -100,6 +116,7 @@ const WebSiteDesc = () => {
   );
 };
 
+// BOTTOM CONVERSATION NUMBER
 const ConversationNumber = () => {
   return (
     <ConverstationCount>
@@ -109,6 +126,7 @@ const ConversationNumber = () => {
   );
 };
 
+// FOOTER WRAPPER
 const FooterWrapper = () => {
   return (
     <FooterContainer>
@@ -118,6 +136,7 @@ const FooterWrapper = () => {
   );
 };
 
+// INFO SECTION
 Login.infoSection = ({ props, children }) => {
   return (
     <InfoWrapper>
@@ -128,6 +147,7 @@ Login.infoSection = ({ props, children }) => {
   );
 };
 
+// SIGN IN BTN
 const SignInBtn = () => {
   return (
     <ButtonContainer>
@@ -145,6 +165,7 @@ const SignInBtn = () => {
   );
 };
 
+// SIGN UP BTN
 const SignUpBtn = () => {
   return (
     <SignUpButtonContainer>
@@ -161,44 +182,66 @@ const SignUpBtn = () => {
   );
 };
 
+// FORGOT PASSWORD
 const ForgotPasswordText = () => (
   <ForgotPassContainer>Forgot your password?</ForgotPassContainer>
 );
 
-const EmailField = () => {
+// EMAIL OR USERNAME FIELD
+const EmailOrUserNameField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
+  // UI
   return (
-    <FormCol>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
       <Label htmlFor="email">Email Or Username</Label>
       <Input
         type="email"
         id="email"
         name="email"
+        value={values["email"]}
         placeholder={placeholder.email}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.email}
+        error={errors.email}
       />
     </FormCol>
   );
 };
 
+// PASSWORD FIELD
 const PasswordField = () => {
+  // CONTEXT
+  const [values, handlChange, HandleFocus, touched, errors] = useContext(
+    context
+  );
+
+  // UI
   return (
-    <FormCol>
-      <Label htmlFor="password">Password</Label>
+    <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
+      <Label htmlFor="password">Password *</Label>
       <Input
         type="password"
         id="password"
         name="password"
+        value={values["password"]}
         placeholder={placeholder.password}
         width={"100%"}
         margin_bottom={"10px"}
         height={"45px"}
+        touched={touched.password}
+        error={errors.password}
       />
     </FormCol>
   );
 };
 
+// LOGIN WITH EMAIL TEXT
 const LoginWithEmailText = () => {
   return (
     <LoginTextContainer>
@@ -207,28 +250,53 @@ const LoginWithEmailText = () => {
   );
 };
 
+// LOGIN FORM
 const LoginForm = () => {
+  // VALIDATION FORM SCHEMA
+  const schema = Validator.object({
+    email: Validator.string().min(1).max(20).result(),
+    password: Validator.string().min(8).max(20).result(),
+  });
+
+  // UI
   return (
-    <FormContainer>
-      <LoginWithEmailText />
-      <Form>
-        <FormRow>
-          <EmailField />
-        </FormRow>
-        <FormRow>
-          <PasswordField />
-        </FormRow>
-        <FormRow>
-          <SignUpBtn />
-        </FormRow>
-        <FormRow>
-          <ForgotPasswordText />
-        </FormRow>
-      </Form>
-    </FormContainer>
+    <Formy
+      initialValues={{
+        username: "",
+        password: "",
+      }}
+      schemaValidation={(data) => schema.validate(data)}
+    >
+      {({ values, handlChange, touched, errors, HandleFocus }) => {
+        return (
+          <context.Provider
+            value={[values, handlChange, HandleFocus, touched, errors]}
+          >
+            <FormContainer>
+              <LoginWithEmailText />
+              <Form>
+                <FormRow>
+                  <EmailOrUserNameField />
+                </FormRow>
+                <FormRow>
+                  <PasswordField />
+                </FormRow>
+                <FormRow>
+                  <SignUpBtn />
+                </FormRow>
+                <FormRow>
+                  <ForgotPasswordText />
+                </FormRow>
+              </Form>
+            </FormContainer>
+          </context.Provider>
+        );
+      }}
+    </Formy>
   );
 };
 
+// MOBILE STORES ICONS
 const MobileStores = () => {
   return (
     <StoreWrapper>
@@ -240,6 +308,7 @@ const MobileStores = () => {
   );
 };
 
+// FROM SECTION
 Login.formSection = ({ props, children }) => {
   return (
     <FormWrapper>

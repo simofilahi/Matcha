@@ -15,22 +15,11 @@ Validator.match = function (data) {
 };
 
 Validator.max = function (data) {
-  // console.log("max");
-  // this.props["_max"] = (data, obj) => {
-  //   if (data.length > obj["__max"]) return true;
-  //   return false;
-  // };
   this.props["__max"] = data;
   return this;
 };
 
 Validator.min = function (data) {
-  // this.props["_min"] =
-  // (data, obj) => {
-  //   console.log("min");
-  //   if (data.length > obj["__min"]) return true;
-  //   return false;
-  // };
   this.props["__min"] = data;
   return this;
 };

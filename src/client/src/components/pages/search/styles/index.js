@@ -8,12 +8,17 @@ export const Wrapper = styled.div`
   margin-top: 50px;
 `;
 
-export const GirdContainer = styled.div`
+export const FlexContianer = styled.div`
   width: 1020px;
   max-width: 1020px;
+`;
+
+export const GirdContainer = styled.div`
+  flex: 1;
   display: grid;
   grid-template-columns: auto auto auto auto;
   grid-gap: 10px 10px;
+  background-color: red;
 `;
 
 export const UserInfoContainer = styled.div`
