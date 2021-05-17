@@ -21,6 +21,7 @@ const color = {
   lavenderRose: "#F99DF0",
   dustyGray: "#949494",
   torchRed: "#FF0033",
+  alabaster: "#F9F9F9",
 };
 
 // RGBA COLOR
@@ -42,6 +43,8 @@ const icon = {
   camera: "fas fa-camera",
   heart: "fas fa-heart",
   message: "fas fa-comment-dots",
+  filter: "fas fa-filter",
+  arrowDown: "fas fa-arrow-down",
   // EXPLORE PAGE
   dislike: "far fa-times-circle",
   // LOGIN PAGE

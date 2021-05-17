@@ -79,6 +79,7 @@ import Search from "src/components/search";
 import Button from "src/components/button";
 
 import SideBar from "src/components/sideBar";
+import Modal from "src/components/modal";
 
 // USER INFOS
 const UserInfo = () => {
@@ -368,7 +369,7 @@ const VerificationProfileCmp = () => {
 // PROFILE PAGE
 const ProfilePage = (props) => {
   return (
-    <Wrapper>
+    <Wrapper modalOpen={true}>
       {props.children}
       <Container>
         <UserInfo />
@@ -385,6 +386,8 @@ const ProfilePage = (props) => {
           <VerificationProfileCmp />
         </SpliterContainer>
       </Container>
+
+      <Modal open={true} />
     </Wrapper>
   );
 };

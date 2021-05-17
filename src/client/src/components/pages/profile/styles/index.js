@@ -1,3 +1,4 @@
+import Modal from "src/components/modal";
 import { CustomSize, fontSize, color } from "src/values";
 import styled from "styled-components";
 
