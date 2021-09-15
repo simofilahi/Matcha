@@ -184,9 +184,8 @@ const ForgotPasswordText = () => (
 
 const FirstNameField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -208,9 +207,8 @@ const FirstNameField = () => {
 
 const LastNameField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -232,9 +230,8 @@ const LastNameField = () => {
 
 const UserNameField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -256,9 +253,8 @@ const UserNameField = () => {
 
 const EmailField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -280,9 +276,8 @@ const EmailField = () => {
 
 const PasswordField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -305,9 +300,8 @@ const PasswordField = () => {
 // CONFIRM PASSWORD
 const ConfirmPasswordField = () => {
   // CONTEXT
-  const [values, handlChange, HandleFocus, touched, errors] = useContext(
-    context
-  );
+  const [values, handlChange, HandleFocus, touched, errors] =
+    useContext(context);
 
   return (
     <FormCol onChange={(e) => handlChange(e)} onFocus={(e) => HandleFocus(e)}>
@@ -337,7 +331,7 @@ const LoginWithEmailText = () => {
 
 const LoginForm = () => {
   const SignUpSchema = {
-    firstname: "ss",
+    firstname: "",
   };
 
   return (
@@ -349,7 +343,7 @@ const LoginForm = () => {
         password: "",
         confirmPassword: "",
       }}
-      validationSchema={}
+      validationSchema={SignUpSchema}
     >
       {({ values, handlChange, touched, errors, HandleFocus }) => {
         return (
